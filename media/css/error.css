@@ -1,0 +1,31 @@
+#error_message .alert_box{
+    position:relative;
+}
+#error_message .alert{
+    position:relative;
+    padding-right:30px;
+}
+#error_message .close{
+    position:absolute;
+    right:10px;
+    top:50%;
+    margin-top:-0.55em;
+}
+input.warning,select.warning,textarea.warning{
+   border-color:orange;
+}
+input.danger,select.danger,textarea.danger{
+   border:1px solid #FF5B5B;
+   box-shadow:0px 0px 1px 1px #FF5B5B;
+}
+
+.help_block{
+    font-size:12px;
+    padding-left:10px;
+}
+.help_block.danger{
+    color:red;
+}
+.help_block.warning{
+    color:orange;
+}

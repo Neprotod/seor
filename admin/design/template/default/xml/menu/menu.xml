@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<menus>
+    <menu name="default">
+        <name>Главная</name>
+        <link>/</link>
+        <svg>home</svg>
+    </menu>
+    <menu name="promo">
+        <name>Промо и цены</name>
+        <link>/promo</link>
+        <svg>orders</svg>
+    </menu>
+    <menu name="moder">
+        <name>Модерирование</name>
+        <link>/moderation</link>
+        <svg>moder</svg>
+    </menu>
+    <menu name="vacancies">
+        <name>Вакансии</name>
+        <link>/</link>
+        <svg>vacancies</svg>
+    </menu>
+    <menu name="support">
+        <name>Тех поддержка</name>
+        <link>/support/fetch</link>
+        <svg>custom</svg>
+    </menu>
+    <menu name="category">
+        <name>Категории</name>
+        <link>/categories/category</link>
+        <svg>category</svg>
+    </menu>
+    <menu name="page">
+        <name>Страницы</name>
+        <link>/pages/page</link>
+        <svg>page</svg>
+    </menu>
+    <menu name="users">
+        <name>Пользователи</name>
+        <link>/users</link>
+        <svg>users</svg>
+    </menu>
+    <menu name="moderator">
+        <name>Модераторы</name>
+        <link>/moderator/user</link>
+        <svg>moderator</svg>
+        <class>moderator</class>
+        <method>user</method>
+    </menu>
+    <menu name="custom">
+        <name>Настройки</name>
+        <link>/system/customer</link>
+        <svg>custom</svg>
+        <class>system</class>
+        <method>customer</method>
+    </menu>
+</menus>

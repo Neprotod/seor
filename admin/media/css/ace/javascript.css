@@ -1,0 +1,19 @@
+.ace_scroller {
+    background-color: #F2F4FF !important;
+}
+.ace_type {
+    color: #000080 !important;
+    font-weight:bold;
+}
+.ace_keyword {
+    color: #000080 !important;
+    font-weight:bold;
+}
+.ace_operator {
+    color: #000 !important;
+    font-weight:bold;
+}
+.ace_numeric{
+    color: #FF0000 !important;
+    font-weight:normal !important;
+}

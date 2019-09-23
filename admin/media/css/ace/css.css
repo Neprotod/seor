@@ -1,0 +1,24 @@
+.ace-xcode .ace_variable{
+    color: #FF0000 !important;
+}
+.ace-xcode .ace_constant{
+    color: #0000FF !important;
+    font-weight:normal !important;
+    font-famely:"Botang" !important;
+}
+.ace-xcode .ace_operator {
+    color: #C800A4 !important;
+    font-weight:normal !important;
+}
+.ace-xcode .ace_type {
+    color: #8080C0 !important;
+    font-weight:bold !important;
+}
+.ace-xcode .ace_numeric{
+    color: #000 !important;
+    font-weight:bold !important;
+}
+.ace-xcode .ace_support{
+    color: #000;
+    font-weight:bold !important;
+}

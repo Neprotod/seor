@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root name="dopMenu" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic>
+        <element name="item">
+            <attribute name="link" cell="link" />
+            <attribute name="active" cell="active" default="false" />
+            <element name="name">
+                <text cell="name" other="cdata" />
+            </element>
+            <dynamic cell="dop">
+                <element name="dop">
+                    <attribute name="link" cell="link" />
+                    <attribute name="active" cell="active" default="false" />
+                    <element name="name">
+                        <text cell="name" other="cdata" />
+                    </element>
+                </element>
+            </dynamic>
+        </element>
+    </dynamic>
+</root>

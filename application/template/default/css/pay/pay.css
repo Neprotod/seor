@@ -1,0 +1,326 @@
+#container_pay{
+    padding:20px 40px;
+    padding-bottom:40px;
+    position:relative;
+}
+.out_info{
+    padding-bottom:40px;
+    font-size:14px;
+}
+#container_pay .bonus{
+    color:red;
+}
+#container_pay .card{
+    width:225px;
+    border-radius:0;
+    border:none;
+    background:#fbfbfb;
+    box-shadow: 4px 4px 4px 0 rgba(0,0,0,.08);
+    margin-top:20px;
+}
+#container_pay .card-body{
+    padding-top:0;
+    padding-bottom:0;
+}
+#container_pay .card-header{
+    width:100%;
+    height:110px;
+    border:none;
+    border-radius:0;
+}
+#pay_page .card-header .big_chap{
+    font-size:22px;
+    color:#fff;
+}
+#container_pay .list-group-item{
+    background-color: transparent;
+    border: none;
+    padding:20px 0;
+    width:100%;
+    font-size:14px;
+}
+#container_pay .card .list-group-item.last-item{
+    padding-top:0px;
+}
+#pay_page .card-green{
+    background:#81c757;
+}
+#pay_page .card-dragon-age{
+    background:#00abd7;
+}
+#pay_page .card-orchid{
+    background:#b663b3;
+}
+#pay_page .card-yellow{
+    background:#ffcc00;
+}
+#container_pay .pay_mouth{
+    font-size:23px;
+    font-weight:300;
+}
+#container_pay .pay_count{
+    font-size:26px;
+}
+#container_pay .pay_count .coin_sing{
+    margin-bottom:3px;
+    margin-left:1px;
+}
+#container_pay .pay_count .small{
+    font-size:22px;
+}
+#container_pay .card .btn{
+    width:100%;
+    padding:10px;
+    width:155px;
+}
+#seor_coin{
+    font-size:14px;
+}
+#form_coin{
+    max-width:625px;
+    position:relative;
+}
+#form_coin .card-header{
+    border-bottom:none;
+}
+#form_coin .card-body{
+    background:#f5f5f5;
+    margin:0;
+    padding:45px;
+}
+#form_coin .seor_input{
+    padding-right:70px;
+}
+#form_coin .caption_seor{
+    position:absolute;
+    top:0;
+    right:5px;
+    height:48px;
+    display:flex;
+    border-left:1px solid #dee2e6;
+    padding-left:5px;
+    width:60px;
+    text-align:center;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+#form_coin .caption_seor > *{
+    width:100%;
+}
+#converter{
+    margin-top:32px;
+    min-width:157px;
+    height:45px;
+    z-index:2;
+    border:3px solid #81c757;
+    border-radius:5px;
+}
+#form_seor_count, #form_seor_currency{
+    z-index:2;
+}
+#form_seor_count input, #form_seor_currency input{
+    height:48px;
+}
+#green_frame{
+    width:200px;
+    height:76px;
+    border:1px solid #81c757;
+    border-left:none;
+    position:absolute;
+    left:-100px;
+    top:18px;
+    z-index:1;
+}
+#form_seor_bonus{
+    height:48px;
+    width:100%;
+    border:2px dashed #3fb800;
+    outline: #f5f5f5 solid 3px;
+    outline-offset:-1px;
+    border-radius:5px;
+    color:#3fb800;
+    /*font-weight:bold;*/
+    font-size:16px;
+    padding:0 20px;
+}
+#form_coin .text-grey{
+    position:absolute;
+    bottom:-30px;
+}
+#form_coin .btn{
+    width:100%;
+    padding:10px;
+}
+#form_coin .imet_box{
+    min-height:100%;
+}
+#form_coin .select_value{
+    display:inline !important;
+    min-height:auto;
+}
+.description_seor_coin{
+    line-height:16px;
+}
+.currency_sing{
+    font-size:16px;
+    font-weight:bold;
+}
+
+.select_option_box table{
+    width:100%;
+}
+
+#currency_check{
+    display:table;
+    margin-left:auto;
+}
+#currency_check a{
+    color:inherit;
+    margin-left:10px;
+    font-size:14px;
+}
+#currency_check a:hover{
+    text-decoration:underline;
+}
+#currency_check .active{
+    font-weight:bold;
+    text-decoration:underline;
+    color:#007adf;
+}
+.error_msg{
+    color:red;
+}
+
+#pay_checkout .top_page{
+    border-bottom:1px solid #dee2e6;
+}
+#pay_checkout .top_page .h4{
+    display:inline-block;
+}
+#pay_checkout .right_box{
+    position:relative;
+    display:inline-block;
+    float:right;
+}
+
+
+#pay_checkout .pay_count{
+    font-size:26px;
+}
+#pay_checkout .pay_count .coin_sing{
+    margin-bottom:3px;
+    margin-left:1px;
+}
+#pay_checkout .pay_count .small{
+    font-size:22px;
+}
+#pay_checkout .pay_count .text_grey{
+    font-size:15px;
+    color:#76797b;
+}
+#pay_checkout .pay_box{
+    width:150px;
+    height:150px;
+    margin:10px 0px 0px 10px;
+    background:#fbfbfb;
+    border:3px solid #f7f7f7;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    padding:10px;
+    position:relative;
+    font-size:14px;
+    cursor:pointer;
+}
+#pay_checkout .pay_box input[type="submit"]{
+    display:none;
+}
+#pay_checkout .pay_box:hover{
+    border:3px solid #7ace45;
+}
+#pay_checkout .pay_box .string{
+    font-weight:bold;
+}
+#pay_checkout .pay_box .account_count{
+    position:absolute;
+    bottom:10px;
+}
+#pay_checkout .big_seor_coin{
+    width:33px;
+    height:33px;
+    background:url(../../img/pay.png);
+}
+#liqpay .img{
+    width:125px;
+    height:66px;
+    background:url(../../img/pay.png) -30px 0;
+}
+
+#purpose{
+  border-top:1px solid #dee2e6;
+  padding-top:10px;
+  margin-top:40px;
+}
+#purpose .string_grey{
+    color:#76797b;
+}
+#purpose button{
+    margin-left:auto;
+}
+
+@media (max-width: 600px) {
+    #form_coin{
+       overflow:hidden;
+    }
+    #form_coin .card-body{
+        padding:20px;
+    }
+    #form_coin .bottom-row{
+        display:block !important;
+    }
+    #form_coin .top-row .col-4{
+        min-width:30%;
+        -ms-flex: 0 0 30%;
+        flex: 0 0 30%;
+    }
+    #form_coin .bottom-row .col-4{
+        padding-top:40px;
+        min-width:100%;
+    }
+    #form_coin #converter{
+        position:absolute;
+        right:20px;
+        width:160px;
+        top:28px;
+    }
+    #form_coin #form_seor_count{
+        margin-bottom:70px;
+    }
+    #form_coin #green_frame{
+        width:120px;
+        left:auto;
+        right:80px;
+        height: 120px;
+        top: 22px;
+    }
+}
+@media (max-width: 350px) {
+    #form_coin .top-row .col-4{
+        min-width:15%;
+        -ms-flex: 0 0 15%;
+        flex: 0 0 15%;
+    }
+    #form_coin #converter{
+        right:5px;
+    }
+    #form_coin #green_frame{
+        right:40px;
+    }
+    #form_seor_bonus{
+        padding:5px;
+        font-size:15px;
+    }
+}

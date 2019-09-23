@@ -1,0 +1,334 @@
+@media (max-width: 1250px) {
+    .visa_box{
+       max-width:1000px;
+    }
+}
+
+@media (max-width: 1200px) {}
+
+@media (max-width: 1100px) {
+    #head_slider h1{
+        font-size:40px;
+    }
+    #head_slider .btn{
+        font-size:18px;
+    }
+    #head_slider .button_block{
+        padding-top: 80px;
+    }
+    #menu{
+        font-size:1em;
+    }
+    #register_block .string{
+        font-size:1em;
+    }
+    #menu > *{
+        padding-left: 28px;
+    }
+}
+@media (max-width: 1050px) {
+    .visa_box{
+       max-width:800px;
+    }
+}
+@media (max-width: 992px) {
+    #head_slider h1{
+        font-size:30px;
+    }
+    #head_slider h4{
+        font-size:16px;
+    }
+    #head_slider .container{
+        padding-left:9em;
+        padding-right:9em;
+    }
+    #head_slider .btn{
+        font-size:16px;
+        padding: 10px 20px;
+    }
+    #head_slider .button_block{
+        padding-top: 30px;
+    }
+    #menu{
+        font-size:0.9em;
+    }
+    #register_block .string{
+        font-size:0.9em;
+    }
+    #register_block {
+        margin: 0.4em 0;
+    }
+    #menu > *{
+        padding-left: 18px;
+    }
+}
+@media (max-width: 900px) {
+    #signs_block .float_col{
+        width:50%;
+    }
+}
+@media (max-width: 860px) {
+    #logo.for_mob{
+        padding-top:0px;
+        display:flex;
+        -ms-flex-align: center !important;
+        align-items: center !important;
+        -ms-flex-pack: start !important;
+        justify-content: flex-start !important;
+    }
+    #logo.for_mob .menu_icon_mobile{
+        margin-top:16px;
+        margin-left:-10px;
+        display:block;
+    }
+    #logo.for_mob  .logo_box{
+        transform:scale(0.6);
+        margin-left:-20px;
+    }
+    #header_top .for_hidden{
+        display:none;
+    }
+    #menu_button {
+        display:block;
+    }
+    .visa_box{
+        max-width:600px;
+    }
+    
+    #top_vacancies .card_box{
+        width:210px;
+    }
+    #top_vacancies .card_box .vacancies{
+        display:block;
+    }
+    #top_vacancies .card_box .vacancies > *{
+        /*width:100%;*/
+        display:block;
+    }
+    #top_vacancies .card_box .vacancies .info{
+        padding:0 !important;
+    }
+}
+@media (max-width: 768px) {
+    #head_slider h1{
+        font-size:25px;
+        padding-bottom:10px;
+        padding-top: 25px;
+    }
+    #head_slider h4{
+        font-size:14px;
+    }
+    #head_slider .container{
+        padding-left:5em;
+        padding-right:5em;
+    }
+    #head_slider .carousel-indicators{
+        margin-right: -55%;
+    }
+    #guarantees .row {
+    justify-content: center !important;
+}
+    #guarantees .col-3 {
+        flex: 0 0 33%;
+        max-width: 100%;
+    }
+    #collapse_mobail_box{
+        padding-left:60%;
+    }
+    #vis_inside .row{
+        display:block;
+    }
+    #vis_inside .col{
+        display:block;
+        max-width:100% !important;
+        width:100% !important;
+        min-width:100% !important;
+    }
+}
+@media (max-width: 645px) {
+    .visa_box .visa{
+        position:relative;
+        min-width:200px;
+    }
+    .visa_box .string{
+        left:0;
+        right:0;
+        margin:auto;
+        position:absolute;
+        /*width:auto;*/
+        text-align:center;
+    }
+    .visa_box .string span{
+       /*display:block;
+       margin:0;
+       position:relative;
+       margin:auto;*/
+    }
+    .visa{
+        width:50%;
+    }
+    #footer_top .col  .center_block{
+       width:100%;
+    }
+}
+
+
+@media (max-width: 610px) {
+    #head_slider .button_block {
+        padding-top: 20px;
+    }
+    #head_slider h1{
+        padding-top: 40px;
+    }
+    #head_slider .container{
+        padding-left:1em;
+        padding-right:1em;
+    }
+    .carousel-item{
+        width:600px !important;
+    }
+    .carousel-item img{
+        height:100% !important;
+        width:100% !important;
+    }
+}
+
+@media (max-width: 576px) {
+    #signs_block .float_col{
+        width:100%;
+    }
+    #head_slider h1{
+        font-size:20px;
+        padding-top: 30px;
+        padding-bottom: 5px;
+    }
+    #head_slider h4{
+        font-size:14px;
+    }
+    #head_slider .container{
+        padding-left:2.5em;
+        padding-right:2.5em;
+    }
+    #head_slider .btn{
+        /*font-size:12px;*/
+        padding: 7px 20px;
+    }
+    #head_slider .button_block{
+        padding-top: 8px;
+    }
+    #head_slider .carousel-indicators{
+        margin-right: -70%;
+    }
+    #guarantees .row {
+        justify-content: center !important;
+    }
+    #guarantees .col-3 {
+        flex: 0 0 50%;
+        max-width: 100%;
+    }
+    #guarantees .for_hidden{
+        display:none !important;
+    }
+    #collapse_mobail_box{
+        padding-left:40%;
+    }
+}
+
+@media (max-width: 500px) {
+    .visa_box .string{
+        left:0;
+        right:0;
+        margin:auto;
+    }
+    .visa_box .string span{
+       margin:0;
+       position:relative;
+       margin:auto;
+    }
+    .visa{
+        width:100%;
+    }
+    #top_vacancies .card_box{
+        width:100%;
+    }
+    #top_vacancies .card_box .row{
+        display:table;
+        margin:auto;
+    }
+    #top_vacancies .card_box .col{
+        display:table;
+        margin:auto;
+        text-align:center;
+    }
+    #top_vacancies .card_box .vacancies .img{
+        margin:auto;
+    }
+}
+@media (max-width: 450px) {
+    #head_slider .button_block {
+            padding-top:0px;
+    }
+    #head_slider .button_block  .col-5 {
+            padding:5px;
+            display:block;
+            font-size:12px;
+            min-width:100px;
+    }
+    #head_slider .button_block  .btn {
+            padding:10px 0px;
+            display:block;
+            font-size:12px !important;
+    }
+    #guarantees .row {
+        display:block !important;
+    }
+    #guarantees .col-3 {
+        display:block;
+        margin-bottom:50px;
+    }
+    #guarantees .for_hidden{
+        display:none !important;
+    }
+    #collapse_mobail_box{
+        padding-left:0%;
+        z-index:199;
+    }
+    #mobail_menu{
+        padding-top:80px;
+    }
+    #map{
+        padding-top:0.5em;
+        width:255px;
+        height:213px;
+    }
+    .table_vis{
+        font-size:12px;
+    }
+   
+}
+@media (max-width: 380px) {
+    #notification_menu{
+        max-width:260px !important;
+        min-width:260px !important;
+        right:0  !important;
+        left:-50px  !important;
+    }
+}
+@media (max-width: 330px) {
+    #head_slider .h4{
+        font-size:16px;
+    }
+    #guarantees .row {
+        display:block !important;
+    }
+    #guarantees .col-3 {
+        display:block !important;
+        margin-bottom:50px;
+    }
+    #guarantees .for_hidden{
+        display:none !important;
+    }
+    .table_vis{
+        font-size:11px;
+    }
+}

@@ -1,0 +1,13 @@
+<root name="appeal">
+    <attribute name="title" cell="title" />
+    <attribute name="new" cell="for" />
+    <attribute name="type" cell="type" />
+    <attribute name="date" cell="date" />
+    <attribute name="id" cell="id" />
+    <element name="message">
+        <attribute name="for" cell="for" />
+        <attribute name="date" cell="date" />
+        <attribute name="num" cell="num" />
+        <text other="cdata" cell="message" />
+    </element>
+</root>

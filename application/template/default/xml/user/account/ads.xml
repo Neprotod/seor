@@ -1,0 +1,62 @@
+<root name="account" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="user" one="true">
+        <element name="user">
+            <attribute name="seor" cell="seor" />
+            <attribute name="days" cell="days" />
+            <attribute name="clicks" cell="clicks" />
+            <attribute name="ads" cell="ads" />
+            <attribute name="message" cell="message" />
+            <attribute name="notification" cell="notification" />
+            <attribute name="employer" cell="employer" />
+            <attribute name="took_days" cell="took_days" />
+            <attribute name="email" cell="email" />
+            <attribute name="logo" cell="logo" />
+            <attribute name="no_logo" cell="no_logo" />
+            <attribute name="logo_path" cell="logo_path" />
+            <attribute name="id_country" cell="id_country" />
+            <attribute name="name" cell="name" />
+            <attribute name="complete" cell="complete" />
+        </element>
+    </dynamic>
+    <dynamic cell="ads">
+        <element name="ads">
+            <attribute name="id" cell="id" />
+            <attribute name="id_user" cell="id_user" />
+            <attribute name="title" cell="title" />
+            <attribute name="salary" cell="salary" />
+            <attribute name="time" cell="time" />
+            <attribute name="status" cell="status" />
+            <attribute name="approved" cell="approved" />
+            <attribute name="id_country" cell="id_country" />
+            <attribute name="id_currency" cell="id_currency" />
+            <element name="description">
+                <text cell="description" />
+            </element>
+        </element>
+    </dynamic>
+    <dynamic cell="currency_name">
+        <element name="currency_name">
+            <attribute name="id" cell="id" />
+            <text cell="name" />
+        </element>
+    </dynamic>
+    <dynamic cell="price">
+        <element name="price">
+            <attribute name="id" cell="id" />
+            <attribute name="type_name" cell="type_name" />
+            <attribute name="name" cell="name" />
+            <attribute name="clicks" cell="clicks" />
+            <attribute name="adc" cell="adc" />
+            <text cell="amount" />
+        </element>
+    </dynamic>
+    <dynamic cell="count">
+        <element name="count">
+            <dynamic>
+                <element name="count" key="true">
+                    <text />
+                </element>
+            </dynamic>
+        </element>
+    </dynamic>
+</root>

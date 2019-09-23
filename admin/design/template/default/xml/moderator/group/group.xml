@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root name="moderator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="group">
+        <element name="group">
+            <attribute name="id" cell="id" />
+            <attribute name="type" cell="type" />
+            <element name="title">
+                <text cell="title" other="cdata" />
+            </element>
+            <element name="description">
+                <text cell="description" other="cdata" />
+            </element>
+        </element>
+    </dynamic>
+    <dynamic cell="module">
+        <element name="module">
+            <attribute name="id" cell="id" />
+            <attribute name="class_name" cell="class_name" />
+            <attribute name="id_type" cell="id_type" />
+            <attribute name="type" cell="type" />
+            <attribute name="id_class" cell="id_class" />
+            <element name="description">
+                <text cell="description" other="cdata" />
+            </element>
+            <dynamic cell="method">
+                <element name="method">
+                    <attribute name="id" cell="id" />
+                    <attribute name="id_class" cell="id_class" />
+                    <attribute name="method" cell="method" />
+                    <element name="description">
+                        <text cell="description" other="cdata" />
+                    </element>
+                    <dynamic cell="rule">
+                        <element name="rule">
+                            <attribute name="id" cell="id" />
+                            <attribute name="id_permission" cell="id_permission" />
+                            <attribute name="rule" cell="rule" />
+                            <element name="description">
+                                <text cell="description" other="cdata" />
+                            </element>
+                        </element>
+                    </dynamic>
+                </element>
+            </dynamic>
+            <dynamic cell="controller">
+                <element name="controller">
+                    <attribute name="id" cell="id" />
+                    <attribute name="class_name" cell="class_name" />
+                    <attribute name="id_type" cell="id_type" />
+                    <attribute name="type" cell="type" />
+                    <attribute name="id_class" cell="id_class" />
+                    <element name="description">
+                        <text cell="description" other="cdata" />
+                    </element>
+                    <dynamic cell="method">
+                        <element name="method">
+                            <attribute name="id" cell="id" />
+                            <attribute name="id_class" cell="id_class" />
+                            <attribute name="method" cell="method" />
+                            <element name="description">
+                                <text cell="description" other="cdata" />
+                            </element>
+                            <dynamic cell="rule">
+                                <element name="rule">
+                                    <attribute name="id" cell="id" />
+                                    <attribute name="id_permission" cell="id_permission" />
+                                    <attribute name="rule" cell="rule" />
+                                    <element name="description">
+                                        <text cell="description" other="cdata" />
+                                    </element>
+                                </element>
+                            </dynamic>
+                        </element>
+                    </dynamic>
+                </element>
+            </dynamic> 
+            <dynamic cell="model">
+                <element name="model">
+                    <attribute name="id" cell="id" />
+                    <attribute name="class_name" cell="class_name" />
+                    <attribute name="id_type" cell="id_type" />
+                    <attribute name="type" cell="type" />
+                    <attribute name="id_class" cell="id_class" />
+                    <element name="description">
+                        <text cell="description" other="cdata" />
+                    </element>
+                    <dynamic cell="method">
+                        <element name="method">
+                            <attribute name="id" cell="id" />
+                            <attribute name="id_class" cell="id_class" />
+                            <attribute name="method" cell="method" />
+                            <element name="description">
+                                <text cell="description" other="cdata" />
+                            </element>
+                            <dynamic cell="rule">
+                                <element name="rule">
+                                    <attribute name="id" cell="id" />
+                                    <attribute name="id_permission" cell="id_permission" />
+                                    <attribute name="rule" cell="rule" />
+                                    <element name="description">
+                                        <text cell="description" other="cdata" />
+                                    </element>
+                                </element>
+                            </dynamic>
+                        </element>
+                    </dynamic>
+                </element>
+            </dynamic>
+        </element>
+    </dynamic>
+    <dynamic cell="status">
+        <element name="status">
+            <element name="permission_elem" key="true">
+                <dynamic cell="permission">
+                    <element name="permission">
+                        <attribute name="id" cell="id" />
+                        <attribute name="id_permission" cell="id_permission" />
+                        <attribute name="method" cell="method" />
+                    </element>
+                </dynamic>
+                <dynamic cell="rule">
+                    <dynamic>
+                        <element name="rule">
+                            <attribute name="id" cell="id" />
+                            <attribute name="id_rule" cell="id_rule" />
+                            <attribute name="rule" cell="rule" />
+                            <attribute name="id_permission" cell="id_permission" />
+                        </element>
+                    </dynamic>
+                </dynamic>
+            </element>
+        </element>
+    </dynamic>
+</root>

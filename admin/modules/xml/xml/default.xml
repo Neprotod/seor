@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<styles>
+    <file type="" default="1" id="70" style_type="css">
+        <name>common</name>
+        <title>
+            <![CDATA[]]>
+        </title>
+        <description>
+            <![CDATA[]]>
+        </description>
+        <path>application/template/default/css/common.css</path>
+    </file>
+    <file type="" default="1" id="1" style_type="css">
+        <name>animate</name>
+        <title>
+            <![CDATA[Анимация]]>
+        </title>
+        <description>
+            <![CDATA[]]>
+        </description>
+        <path>application/template/default/css/animate.css</path>
+    </file>
+    <file type="" default="0" id="57" style_type="css">
+        <name>work</name>
+        <title>
+            <![CDATA[]]>
+        </title>
+        <description>
+            <![CDATA[]]>
+        </description>
+        <path>application/template/default/css/work.css</path>
+    </file>
+    <file type="" default="0" id="56" style_type="js">
+        <name>menu</name>
+        <title>
+            <![CDATA[]]>
+        </title>
+        <description>
+            <![CDATA[]]>
+        </description>
+        <path>application/template/default/js/menu.js</path>
+    </file>
+    <file type="page" default="0" id="80" style_type="css">
+        <name>work</name>
+        <title>
+            <![CDATA[]]>
+        </title>
+        <description>
+            <![CDATA[]]>
+        </description>
+        <path>application/template/default/css/page/work.css</path>
+    </file>
+    <file type="page" default="0" id="2" style_type="css">
+        <name>page</name>
+        <title>
+            <![CDATA[]]>
+        </title>
+        <description>
+            <![CDATA[]]>
+        </description>
+        <path>application/template/default/css/page/page.css</path>
+    </file>
+    <file type="post" default="0" id="5" style_type="css">
+        <name>work</name>
+        <title>
+            <![CDATA[]]>
+        </title>
+        <description>
+            <![CDATA[]]>
+        </description>
+        <path>application/template/default/css/post/work.css</path>
+    </file>
+    <file type="category" default="0" id="77" style_type="css">
+        <name>work</name>
+        <title>
+            <![CDATA[]]>
+        </title>
+        <description>
+            <![CDATA[]]>
+        </description>
+        <path>application/template/default/css/category/work.css</path>
+    </file>
+</styles>

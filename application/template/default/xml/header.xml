@@ -1,0 +1,30 @@
+<root name="index" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <attribute name="root" cell="root" />
+    <attribute name="site" cell="site" />
+    <attribute name="body_id" cell="body_id" />
+    <element name="content">
+        <text cell="content" other="cdata" />
+    </element>
+    <element name="head">
+        <text cell="head" other="cdata" />
+    </element>
+    
+    <dynamic cell="fonds" one="true">
+        <element name="fonds">
+            <dynamic>
+                <element name="fond" key="true">
+                    <text />
+                </element>
+            </dynamic>
+        </element>
+    </dynamic>
+    <dynamic cell="additional" one="true">
+        <element name="additional">
+            <dynamic>
+                <element name="additional" key="true">
+                    <text other="cdata" />
+                </element>
+            </dynamic>
+        </element>
+    </dynamic>
+</root>

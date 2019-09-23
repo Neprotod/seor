@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root name="pages">
+    <dynamic cell="default">
+        <element name="default">
+            <attribute name="id" cell="id" />
+            <attribute name="url" cell="url" />
+            <attribute name="type" cell="type" />
+            <attribute name="title" cell="title" />
+            <attribute name="meta_title" cell="meta_title" />
+            <attribute name="robots_name" cell="robots_name" />
+            <attribute name="status" cell="status" />
+            <attribute name="modified" cell="modified" />
+            <attribute name="content_type" cell="content_type" />
+            <attribute name="file_name" cell="file_name" />
+        </element>
+    </dynamic>
+    <dynamic cell="pages">
+        <element name="page">
+            <attribute name="id" cell="id" />
+            <attribute name="url" cell="url" />
+            <attribute name="type" cell="type" />
+            <attribute name="title" cell="title" />
+            <attribute name="meta_title" cell="meta_title" />
+            <attribute name="robots_name" cell="robots_name" />
+            <attribute name="status" cell="status" />
+            <attribute name="modified" cell="modified" />
+            <attribute name="content_type" cell="content_type" />
+            <attribute name="file_name" cell="file_name" />
+        </element>
+    </dynamic>
+</root>

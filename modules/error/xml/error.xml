@@ -1,0 +1,23 @@
+<root name="errors" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic>
+        <element name="box">
+            <attribute name="name" key="key" />
+            <dynamic sort_value="type">
+                <element name="alert">
+                    <attribute name="type" cell="type" />
+                    <attribute name="role" cell="role" not="true" />
+                    <attribute name="tooltip" cell="tooltip" not="true" />
+                    <attribute name="select" cell="select" not="true" />
+                    <attribute name="valid" cell="valid" not="true" />
+                    <attribute name="system" cell="system" not="true" />
+                    <element name="title">
+                        <text cell="title" other="cdata" />
+                    </element>
+                    <element name="message">
+                        <text cell="message" other="cdata" />
+                    </element>
+                </element>
+            </dynamic>
+        </element>
+    </dynamic>
+</root>

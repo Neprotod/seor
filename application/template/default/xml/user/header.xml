@@ -1,0 +1,21 @@
+<root name="header" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <attribute name="seor_unit" cell="seor_unit" />
+    <attribute name="seor" cell="seor" />
+    <attribute name="days" cell="days" />
+    <attribute name="clicks" cell="clicks" />
+    <attribute name="ads" cell="ads" />
+    <attribute name="message" cell="message" />
+    <attribute name="notification" cell="notification" />
+    <attribute name="employer" cell="employer" />
+    <attribute name="took_days" cell="took_days" />
+    <attribute name="email" cell="email" />
+    <element name="logo">
+        <dynamic cell="logo" one="true">
+            <attribute name="logo_small" cell="40" />
+            <attribute name="logo_big" cell="80" />
+        </dynamic>
+    </element>
+    <element name="menu">
+        <text cell="menu" other="cdata" />
+    </element>
+</root>

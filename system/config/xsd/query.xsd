@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="queries">
+        <xs:annotation>
+            <xs:documentation>Основной блок</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:choice minOccurs="0">
+                <xs:sequence>
+                    <xs:sequence maxOccurs="unbounded">
+                        <xs:element ref="query" minOccurs="0" />
+                        <xs:element ref="group" minOccurs="0" />
+                    </xs:sequence>
+                </xs:sequence>
+            </xs:choice>
+        </xs:complexType>
+        <xs:unique name="nameQueryID">
+            <xs:annotation>
+                <xs:documentation>Уникальный среди корневого элемента</xs:documentation>
+            </xs:annotation>
+            <xs:selector xpath="query"/>
+            <xs:field xpath="@name"/>
+        </xs:unique>
+        <xs:unique name="nameGroupID">
+            <xs:annotation>
+                <xs:documentation>Уникальный среди корневого элемента</xs:documentation>
+            </xs:annotation>
+            <xs:selector xpath="group"/>
+            <xs:field xpath="@name"/>
+        </xs:unique>
+    </xs:element>
+    
+    <xs:element name="group">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="description" minOccurs="0" maxOccurs="1" />
+                <xs:sequence minOccurs="1">
+                    <xs:element ref="group" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:element ref="query" minOccurs="0" maxOccurs="unbounded" />
+                </xs:sequence>
+            </xs:sequence>
+            <xs:attribute ref="name" use="required" />
+        </xs:complexType>
+        <xs:unique name="groupQueryID">
+            <xs:annotation>
+                <xs:documentation>Уникальный внутри группы</xs:documentation>
+            </xs:annotation>
+            <xs:selector xpath="query|group"/>
+            <xs:field xpath="@name"/>
+        </xs:unique>
+    </xs:element>
+    
+    <xs:element name="query">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="allElement">
+                    <xs:attribute ref="name" use="required" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    
+    
+    <xs:element name="description"></xs:element>
+    
+    <xs:element name="params">
+        <xs:complexType>
+            <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                <xs:element ref="param" />
+            </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="paramUnique">
+            <xs:annotation>
+                <xs:documentation>Уникальный среди корневого элемента</xs:documentation>
+            </xs:annotation>
+            <xs:selector xpath="param"/>
+            <xs:field xpath="."/>
+        </xs:unique>
+    </xs:element>
+    
+    <xs:simpleType name="to_param">
+        <xs:restriction base="xs:string">
+            <xs:pattern  value=":[a-zA-Z0-9_-]{1,}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="param">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="to_param">
+                    <xs:attribute name="description" />
+                    <xs:attribute name="check" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="request">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute name="type" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="SELECT"/>
+                                <xs:enumeration value="select"/>
+                                <xs:enumeration value="INSERT"/>
+                                <xs:enumeration value="insert"/>
+                                <xs:enumeration value="UPDATE"/>
+                                <xs:enumeration value="update"/>
+                                <xs:enumeration value="DELETE"/>
+                                <xs:enumeration value="delete"/>
+                                <xs:enumeration value="SET"/>
+                                <xs:enumeration value="set"/>
+                                <xs:enumeration value="TRANSACTION"/>
+                                <xs:enumeration value="transaction"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="allElement">
+        <!-- При такой записи, можно выбирать любую последовательность -->
+        <xs:choice minOccurs="1">
+            <xs:sequence>
+                <xs:element ref="description" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="params" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="request" minOccurs="1" maxOccurs="1" />
+            </xs:sequence>
+        </xs:choice>
+    </xs:complexType>
+    
+    <xs:attribute name="name">
+        <xs:annotation>
+            <xs:documentation>Используется в Group и Query</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+            <xs:restriction base="xs:string" />
+        </xs:simpleType>
+    </xs:attribute>
+</xs:schema>

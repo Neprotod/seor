@@ -1,0 +1,68 @@
+# Follow symbolic links in this directory.
+# -Indexes для запрета перехода по папкам
+#Options -Indexes FollowSymLinks
+
+DirectoryIndex index.php index.html index.htm
+
+
+# PHP 5, Apache 1 and 2.
+<IfModule mod_php5.c>
+  php_flag magic_quotes_gpc                 off
+  php_flag magic_quotes_sybase              off
+  #php_flag register_globals                 off
+  #php_flag session.auto_start               off
+  #php_value mbstring.http_input             pass
+  #php_value mbstring.http_output            pass
+  #php_flag mbstring.encoding_translation    off
+</IfModule>
+
+RewriteEngine On
+
+# Указываем корень сайта
+#RewriteBase /
+
+# Protect hidden files from being viewed
+<Files .*>
+    Order Deny,Allow
+    Deny From All
+</Files>
+
+# Запрет прямого скачивания файлов с error
+RewriteRule ^(?:system/error/[^errors])\b.* index.php/$1 [L]
+# Protect application and system files from being viewed
+# RewriteRule ^(?:application|modules|system)\b.* index.php/$1 [L]
+# Запрет прямого выполнения php кода
+# RewriteRule ^(?:application|modules|system).*\.php$ index.php/$1 [L]
+#RewriteRule ^(?:application|modules|system).*\.php|xml|txt$ index.php/$1 [L]
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+
+# Для убирания www
+RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+# Защита от хотлинка
+    #RewriteCond %{HTTP_REFERER} !.*://[w\.]{0,4}(tree|php)[\.a-zA-Z]{0,5}/.* [NC]
+    #RewriteRule \.(jpg|jpeg|png|bmp|gif|swf|css|js)$ - [NC,F,L]
+
+
+
+
+# FOR ERROR PANEL
+RewriteCond %{REQUEST_FILENAME} c3bc592b8a755ac3148c0e01271cf6dc
+# При критической ошибке
+RewriteRule /(.*) system/error/errors/error.php/$1 [L]
+
+# FOR ADMIN PANEL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Для админ панели
+RewriteRule    ^admin/?(.*)  admin/index.php/$1 [L]
+
+# Обычные страницы
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all other URLs to index.php/URL
+RewriteRule (.*) index.php/$1 

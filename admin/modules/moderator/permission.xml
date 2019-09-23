@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module name="moderator" description="Управление модераторами">
+    <methods>
+        <method name="user" description="Работа с группами и модераторами"></method>
+    </methods>
+    <models>
+        <classes name="user_group" description="Группы">
+            <method name="group" description="Изменение группы"></method>
+            <method name="all_group" description="Отображение групп"></method>
+        </classes>
+        <classes name="user_moder" description="Модераторы">
+            <method name="user" description="Изменение модератора"></method>
+            <method name="get_all" description="Отображение модератора"></method>
+        </classes>
+        <classes name="user_delete" description="Группы">
+            <method name="group" description="Удаление группы"></method>
+            <method name="moder" description="Удаление модератора"></method>
+        </classes>
+    </models>
+</module>

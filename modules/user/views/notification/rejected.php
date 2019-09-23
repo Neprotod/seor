@@ -1,0 +1,1 @@
+Вакансия "<?=$ads["title"]?>" была отклонена, <a href="<?=Core::$root_url?>/account/ads?ad=<?=$ads["id"]?>">редактировать</a>.

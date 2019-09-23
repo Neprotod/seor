@@ -1,0 +1,65 @@
+<root name="ad" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="content">
+        <element name="content">
+            <text other="cdata" />
+        </element>
+    </dynamic>
+
+    <dynamic cell="ads_specialization">
+        <element name="ads_specialization">
+            <attribute name="id_ads" cell="id_ads" />
+            <attribute name="id_specialization" cell="id_specialization" />
+        </element>
+    </dynamic>
+    <dynamic cell="ads_language">
+        <element name="ads_language">
+            <attribute name="id_ads" cell="id_ads" />
+            <attribute name="id_language" cell="id_language" />
+        </element>
+    </dynamic>
+    <dynamic cell="specialization">
+        <element name="specialization">
+            <attribute name="id" cell="id" />
+            <text cell="name" />
+        </element>
+    </dynamic>
+    <dynamic cell="language">
+        <element name="language">
+            <attribute name="id" cell="id" />
+            <text cell="name" />
+        </element>
+    </dynamic>
+    <dynamic cell="currency_name">
+        <element name="currency_name">
+            <attribute name="id" cell="id" />
+            <text cell="name" />
+        </element>
+    </dynamic>
+    <dynamic cell="country">
+        <element name="country">
+            <attribute name="id" cell="id" />
+            <text cell="name" />
+        </element>
+    </dynamic>
+    <dynamic cell="all_ads_language">
+        <element name="all_ads_language">
+            <attribute name="id_language" cell="id_language" />
+        </element>
+    </dynamic>
+    <dynamic cell="all_ads_country">
+        <element name="all_ads_country">
+            <attribute name="id_country" cell="id_country" />
+        </element>
+    </dynamic>
+    <dynamic cell="get" one="true">
+        <element name="get">
+            <dynamic>
+                <dynamic>
+                    <element name="element" key="last">
+                        <text />
+                    </element>
+                </dynamic>
+            </dynamic>
+        </element>
+    </dynamic>
+</root>

@@ -1,0 +1,45 @@
+#settings .container .row{
+    /*margin:0px 10px;*/
+}
+#settings .container .col{
+    /*
+    padding-right:20px;
+    margin-right:20px;*/
+    font-size:14px;
+    padding-top:20px;
+}
+
+#settings .h5.small{
+   font-size:16px;
+}
+#settings input{
+   /*font-size:16px;*/
+}
+#settings .old_email{
+   margin-bottom:10px;
+}
+#settings .old_email .mail{
+   font-weight:bold;
+}
+#settings .input-small {
+    min-width: 220px;
+    max-width: 220px;
+}
+#settings .line_vertical{
+    height:100%;
+    width:8px;
+    /*background:#eeebeb;*/
+    background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='16' viewBox='0 0 10 20'%3E%3Cpath fill='none' stroke='%23cccccc' stroke-miterlimit='10' d='M0.4,20.4L9.2,10L0.4-0.4'/%3E%3C/svg%3E") repeat-y;
+    margin:auto;
+}
+
+@media (max-width: 780px) {
+    #settings .col.line{
+        display:none;
+    }
+}
+@media (max-width: 520px) {
+    .row{
+        display:block !important;
+    }
+}

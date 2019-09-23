@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module name="system" description="Системный модуль">
+    <methods>
+        <method name="customer" description="Настройки сайта"> 
+            <permission>
+                <rule name="update" description="Добавление" />
+                <rule name="delete" description="Удаление" />
+            </permission>
+        </method>
+    </methods>
+</module>

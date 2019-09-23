@@ -1,0 +1,26 @@
+<root name="styles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="style_path" one="true">
+        <element name="style_path" key="true">
+            <dynamic cell="css">
+                <element name="css">
+                    <attribute name="link" current="current" />
+                </element>
+            </dynamic>
+            <dynamic cell="js">
+                <element name="js">
+                    <attribute name="link" current="current" />
+                </element>
+            </dynamic>
+        </element>
+    </dynamic>
+    
+    <dynamic cell="style_string" one="true">
+        <element name="t" key="true">
+            <dynamic>
+                <element name="t" key="true">
+                    <text other="cdata" />
+                </element>
+            </dynamic>
+        </element>
+    </dynamic>
+</root>

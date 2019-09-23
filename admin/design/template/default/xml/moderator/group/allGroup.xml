@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root name="moderator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic>
+        <element name="moder">
+            <attribute name="id" cell="id" />
+            <attribute name="type" cell="type" />
+            <element name="title">
+                <text cell="title" other="cdata" />
+            </element>
+            <element name="description">
+                <text cell="description" other="cdata" />
+            </element>
+        </element>
+    </dynamic>
+</root>

@@ -1,0 +1,26 @@
+<root name="users" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="users">
+        <element name="user">
+            <attribute name="id" cell="id" />
+            <attribute name="seor" cell="seor" />
+            <attribute name="days" cell="days" />
+            <attribute name="clicks" cell="clicks" />
+            <attribute name="ads" cell="ads" />
+            <attribute name="message" cell="message" />
+            <attribute name="notification" cell="notification" />
+            <attribute name="employer" cell="employer" />
+            <attribute name="took_days" cell="took_days" />
+            <attribute name="email" cell="email" />
+            <attribute name="logo" cell="logo" />
+            <attribute name="no_logo" cell="no_logo" />
+            <attribute name="logo_path" cell="logo_path" />
+            <attribute name="id_country" cell="id_country" />
+            <attribute name="name" cell="name" />
+            <attribute name="complete" cell="complete" />
+            <attribute name="status" cell="status" />
+            <attribute name="all_year" cell="all_year" />
+            <attribute name="birthday" cell="birthday" />
+            <attribute name="registered" cell="registered" />
+        </element>
+    </dynamic>
+</root>

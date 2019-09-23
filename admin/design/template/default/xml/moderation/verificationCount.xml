@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root name="count" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="count_ads" one="true">
+        <element name="ads">
+            <attribute name="count_ads" cell="count_ads" />
+        </element>
+    </dynamic>
+</root>

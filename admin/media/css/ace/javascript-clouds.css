@@ -1,0 +1,22 @@
+.ace-clouds .ace_scroller {
+    background-color: #F2F4FF !important;
+}
+.ace-clouds .ace_type {
+    color: #000080 !important;
+    font-weight:bold;
+}
+.ace-clouds .ace_keyword {
+    color: #000080 !important;
+    font-weight:bold;
+}
+.ace-clouds .ace_operator {
+    color: #000 !important;
+    font-weight:bold;
+}
+.ace-clouds .ace_numeric{
+    color: #FF0000 !important;
+    font-weight:normal !important;
+}
+.ace-clouds .ace_marker-layer .ace_active-line {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.07);
+}

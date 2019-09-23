@@ -1,0 +1,162 @@
+# Generated pot
+# Translators:
+# andruha.ms <andruha.ms@gmail.com>, 2013
+# Алексей Выскубов <viskubov@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: TinyMCE\n"
+"Report-Msgid-Bugs-To: http://moxiecode.com\n"
+"POT-Creation-Date: 2013-03-21 16:18:52+00:00\n"
+"PO-Revision-Date: 2017-09-23 18:54+0000\n"
+"Last-Translator: Joakim Lindkvist\n"
+"Language-Team: Russian (http://www.transifex.com/moxiecode/tinymce/language/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"\"#: i18n:\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "Insert table"
+msgstr "Вставить таблицу"
+
+msgid "Table properties"
+msgstr "Свойства таблицы"
+
+msgid "Delete table"
+msgstr "Удалить таблицу"
+
+msgid "Cell"
+msgstr "Ячейка"
+
+msgid "Row"
+msgstr "Строка"
+
+msgid "Column"
+msgstr "Столбец"
+
+msgid "Cell properties"
+msgstr "Параметры ячейки"
+
+msgid "Merge cells"
+msgstr "Объединить ячейки"
+
+msgid "Split cell"
+msgstr "Разбить ячейку"
+
+msgid "Insert row before"
+msgstr "Вставить пустую строку сверху"
+
+msgid "Insert row after"
+msgstr "Вставить пустую строку снизу"
+
+msgid "Delete row"
+msgstr "Удалить строку"
+
+msgid "Row properties"
+msgstr "Параметры строки"
+
+msgid "Cut row"
+msgstr "Вырезать строку"
+
+msgid "Copy row"
+msgstr "Копировать строку"
+
+msgid "Paste row before"
+msgstr "Вставить строку сверху"
+
+msgid "Paste row after"
+msgstr "Вставить строку снизу"
+
+msgid "Insert column before"
+msgstr "Добавить столбец слева"
+
+msgid "Insert column after"
+msgstr "Добавить столбец справа"
+
+msgid "Delete column"
+msgstr "Удалить столбец"
+
+msgid "Cols"
+msgstr "Столбцы"
+
+msgid "Rows"
+msgstr "Строки"
+
+msgid "Width"
+msgstr "Ширина"
+
+msgid "Height"
+msgstr "Высота"
+
+msgid "Cell spacing"
+msgstr "Внешний отступ"
+
+msgid "Cell padding"
+msgstr "Внутренний отступ"
+
+msgid "Border"
+msgstr "Рамка"
+
+msgid "Caption"
+msgstr "Заголовок"
+
+msgid "None"
+msgstr "Нет"
+
+msgid "Left"
+msgstr "По левому краю"
+
+msgid "Center"
+msgstr "По центру"
+
+msgid "Right"
+msgstr "По правому краю"
+
+msgid "Cell type"
+msgstr "Тип ячейки"
+
+msgid "Scope"
+msgstr "Scope"
+
+msgid "Alignment"
+msgstr "Выравнивание"
+
+msgid "H Align"
+msgstr "Горизонтальное выравнивание"
+
+msgid "V Align"
+msgstr "Вертикальное выравнивание"
+
+msgid "Top"
+msgstr "По верху"
+
+msgid "Middle"
+msgstr "По середине"
+
+msgid "Bottom"
+msgstr "По низу"
+
+msgid "Header cell"
+msgstr "Заголовок"
+
+msgid "Row group"
+msgstr "Группа строк"
+
+msgid "Column group"
+msgstr "Группа колонок"
+
+msgid "Row type"
+msgstr "Тип строки"
+
+msgid "Header"
+msgstr "Шапка"
+
+msgid "Body"
+msgstr "Тело"
+
+msgid "Footer"
+msgstr "Низ"
+
+msgid "Border color"
+msgstr "Цвет рамки"

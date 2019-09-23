@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:annotation>
+            <xs:documentation>Основной блок</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:choice minOccurs="0">
+            <xs:sequence>
+                <xs:element name="attribute" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

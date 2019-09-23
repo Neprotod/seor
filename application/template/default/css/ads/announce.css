@@ -1,0 +1,147 @@
+#contact_box{
+    min-width:215px;
+    box-shadow: 2px 2px 6px 0 rgba(0,0,0,.07);
+    border-radius: 3px;
+    padding:20px;
+    padding-bottom:40px;
+    text-align:center;
+}
+
+#concatc_logo{
+    padding:6px;
+    display:table;
+    overflow:hidden;
+    border-radius:50%;
+    box-shadow: 0px 2px 2px 0 rgba(0,0,0,.08), 0 2px 4px 0 rgba(0,0,0,.01);
+    margin:30px auto;
+}
+#concatc_logo .img{
+    width:100px;
+    height:100px;
+    background:#f5f5f5;
+    border-radius:50%;
+    overflow:hidden;
+}
+#announce .registr_box{
+    font-size:14px;
+}
+#announce .description{
+    padding-top:40px;
+}
+#announce .info_box{
+    padding-right:40px;
+    max-width:810px;
+    font-size:14px;
+}
+#announce .language{
+    font-size:14px;
+}
+#announce .dot{
+    font-size:2.5em;
+    line-height:0px;
+    position:relative;
+    top:-0.075em;
+}
+#announce.cancel{
+    color:#aaa;
+}
+#contact_box .registr_box .p_12{
+    line-height:14px;
+}
+#contact_box .registr_box .margin-top-small{
+    margin-top:5px;
+}
+#announce .open_contacts_btn{
+    font-size:14px;
+    line-height:14px;
+    padding:5px 20px;
+    font-weight:bold;
+}
+#announce .open_contacts_btn.full{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:10px;
+}
+#announce .pay_info{
+    font-size:14px;
+    line-height:12px;
+}
+#announce .pay_info .pay{
+    position:relative;
+    top:2px;
+    font-size:16px;
+}
+#announce .dop_info{
+    margin-top:20px;
+    font-size:12px;
+}
+#announce .h4.self .dop_text{
+    color:#8cc3ff;
+    padding-left:10px;
+}
+#announce .dop_info .account_is_over{
+    color:#dc3545;
+}
+#announce .expiration_time{
+    font-size:12px;
+}
+#announce .expiration_time .time{
+    font-weight:bold;
+}
+#contact_box{
+    position:relative;
+}
+#contact_box.self {
+    background:#e0eefd;
+}
+#contact_box.self #concatc_logo{
+    background:#fff;
+}
+.contact_fields{
+    font-size:14px;
+    margin-left:10px;
+    padding-bottom:10px;
+}
+.contact_fields > *{
+    margin-bottom:5px;
+}
+.contact_fields .sing{
+    box-sizing: content-box;
+    padding:0;
+    min-width:23px;
+}
+.cancel_message{
+    margin:auto;
+    font-weight:normal;
+    font-size:16px;
+    margin-top:-30px;
+    border-radius:0px;
+}
+
+#company_description{
+    width:175px;
+    margin:auto;
+    margin-top:-10px;
+}
+#company_description .specialization{
+    font-size:14px;
+}
+#count_view{
+    color:#565656;
+    padding-top:15px;
+    font-size:12px;
+}
+#count_view .count_string{
+    font-weight:bold;
+}
+/*МЕДИА*/
+@media (max-width: 550px) {
+    #announce .container.d-flex{
+        display:block !important;
+    }
+    #contact_box{
+        margin-top:40px;
+    }
+}

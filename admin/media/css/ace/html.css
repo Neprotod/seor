@@ -1,0 +1,21 @@
+.ace_meta, .ace_xml-pe, .ace_comment, .ace_entity, .ace_other {
+    font-weight:normal !important;
+}
+.ace_entity .ace_other {
+    color:#000;
+}
+.ace_line_group{
+    color: #000 !important;
+    font-weight:bold;
+}
+.ace_string{
+    color: #8000FF !important;
+    font-weight:bold !important;
+}
+.ace_attribute-name{
+    font-weight:bold !important;
+}
+.ace_operator{
+    color:#000 !important;
+    font-weight:normal !important;
+}

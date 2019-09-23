@@ -1,0 +1,50 @@
+#background_ie{
+    width:850px;
+    height:578px;
+    position:absolute;
+    top:-14px;
+    left:-13px;
+    background:url(../img/forie/background-clouds.png);
+    bottom:0;
+    z-index:50;
+}
+#body_cloud{
+    border-radius:0px 0px !important;
+    border:none !important;
+    overflow:visible !important;
+    box-shadow:none !important;
+}
+#web #content img{
+    /*filter:
+        progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=0,strength=6),
+          progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=45,strength=6),
+          progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=90,strength=6),
+          progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=135,strength=6),
+          progid:DXImageTransform.Microsoft.Shadow(color=#cccccc,direction=180,strength=6),
+          progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=225,strength=6),
+          progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=270,strength=6),
+          progid:DXImageTransform.Microsoft.Shadow(color=#dddddd,direction=315,strength=6);*/
+    filter:
+        progid:DXImageTransform.Microsoft.Shadow(color='#C4C4C4', Direction=45, Strength=1),
+        progid:DXImageTransform.Microsoft.Shadow(color='#CECECE', Direction=45, Strength=2),
+        progid:DXImageTransform.Microsoft.Shadow(color='#D6D6D6', Direction=45, Strength=3),
+        progid:DXImageTransform.Microsoft.Shadow(color='#DFDFDF', Direction=45, Strength=4),
+        progid:DXImageTransform.Microsoft.Shadow(color='#cccccc', Direction=45, Strength=6),
+        progid:DXImageTransform.Microsoft.Shadow(color='#C4C4C4', Direction=135, Strength=1),
+        progid:DXImageTransform.Microsoft.Shadow(color='#CECECE', Direction=135, Strength=2),
+        progid:DXImageTransform.Microsoft.Shadow(color='#D6D6D6', Direction=135, Strength=3),
+        progid:DXImageTransform.Microsoft.Shadow(color='#DFDFDF', Direction=135, Strength=4),
+        progid:DXImageTransform.Microsoft.Shadow(color='#cccccc', Direction=135, Strength=6),
+        progid:DXImageTransform.Microsoft.Shadow(color='#C4C4C4', Direction=225, Strength=1),
+        progid:DXImageTransform.Microsoft.Shadow(color='#CECECE', Direction=225, Strength=2),
+        progid:DXImageTransform.Microsoft.Shadow(color='#D6D6D6', Direction=225, Strength=3),
+        progid:DXImageTransform.Microsoft.Shadow(color='#DFDFDF', Direction=225, Strength=4),
+        progid:DXImageTransform.Microsoft.Shadow(color='#cccccc', Direction=225, Strength=6),
+        progid:DXImageTransform.Microsoft.Shadow(color='#C4C4C4', Direction=315, Strength=1),
+        progid:DXImageTransform.Microsoft.Shadow(color='#CECECE', Direction=315, Strength=2),
+        progid:DXImageTransform.Microsoft.Shadow(color='#D6D6D6', Direction=315, Strength=3),
+        progid:DXImageTransform.Microsoft.Shadow(color='#DFDFDF', Direction=315, Strength=4),
+        progid:DXImageTransform.Microsoft.Shadow(color='#cccccc', Direction=315, Strength=6);
+    position:relative;
+    left:-33px;
+}

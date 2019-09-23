@@ -1,0 +1,10 @@
+<root name="head" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <attribute name="meta_title" cell="meta_title" not="true" />
+    <attribute name="description" cell="description" not="true" />
+    <attribute name="robots" cell="robots_name" not="true" />
+    <attribute name="meta_keywords" cell="meta_keywords" not="empty" />
+    <attribute name="canonical" cell="canonical" not="empty" />
+    <element name="style">
+        <text cell="style" other="cdata" />
+    </element>
+</root>

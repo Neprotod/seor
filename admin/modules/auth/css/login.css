@@ -1,0 +1,30 @@
+.pointer{
+    cursor:pointer;
+}
+#login{
+    width:100%;
+    top:20%;
+}
+#login .card{
+    width:250px;
+    margin:auto;
+    margin-top:-25%;
+}
+
+#login .success input{
+   border-color:green;
+}
+
+.form_error input{
+    border-color:red;
+}
+
+.help_block{
+    font-size:12px;
+}
+.help_block.warning{
+   color:orange;
+}
+.help_block.danger{
+   color:red;
+}

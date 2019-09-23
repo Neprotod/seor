@@ -1,0 +1,20 @@
+# Generated pot
+# Translators:
+# andruha.ms <andruha.ms@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: TinyMCE\n"
+"Report-Msgid-Bugs-To: http://moxiecode.com\n"
+"POT-Creation-Date: 2013-03-21 16:18:52+00:00\n"
+"PO-Revision-Date: 2017-09-19 16:41+0000\n"
+"Last-Translator: andruha.ms <andruha.ms@gmail.com>\n"
+"Language-Team: Russian (http://www.transifex.com/moxiecode/tinymce/language/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"\"#: i18n:\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "Show invisible characters"
+msgstr "Показывать невидимые символы"

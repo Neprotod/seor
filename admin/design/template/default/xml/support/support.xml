@@ -1,0 +1,43 @@
+<root name="support" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="user" one="true">
+        <element name="user">
+            <attribute name="seor" cell="seor" />
+            <attribute name="days" cell="days" />
+            <attribute name="clicks" cell="clicks" />
+            <attribute name="ads" cell="ads" />
+            <attribute name="message" cell="message" />
+            <attribute name="notification" cell="notification" />
+            <attribute name="employer" cell="employer" />
+            <attribute name="took_days" cell="took_days" />
+            <attribute name="email" cell="email" />
+            <attribute name="logo" cell="logo" />
+            <attribute name="no_logo" cell="no_logo" />
+            <attribute name="logo_path" cell="logo_path" />
+            <attribute name="id_country" cell="id_country" />
+            <attribute name="name" cell="name" />
+            <attribute name="complete" cell="complete" />
+            <attribute name="all_year" cell="all_year" />
+            <attribute name="birthday" cell="birthday" />
+            <attribute name="admin_logo" cell="admin_logo" />
+        </element>
+    </dynamic>
+    <dynamic cell="appeal">
+        <element name="appeal">
+            <attribute name="id" cell="id" />
+            <attribute name="title" cell="title" />
+            <attribute name="time" cell="time" />
+            <attribute name="last_activ" cell="last_activ" />
+            <attribute name="status" cell="status" />
+            <attribute name="new" cell="new" />
+        </element>
+    </dynamic>
+    <dynamic cell="message">
+        <element name="message">
+            <attribute name="id" cell="id" />
+            <attribute name="time" cell="time" />
+            <attribute name="seen" cell="seen" />
+            <attribute name="id_admin_user" cell="id_admin_user" />
+            <text cell="message" />
+        </element>
+    </dynamic>
+</root>

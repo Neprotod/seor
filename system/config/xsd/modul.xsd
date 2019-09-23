@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:annotation>
+            <xs:documentation>Основной блок</xs:documentation>
+            <xs:appinfo>Аттрибут name является обязательным</xs:appinfo>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="allElement">
+                    <xs:attribute name="name" use="required" type="xs:string"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="attribute">
+        <xs:complexType>
+            <xs:attribute name="name" use="required" />
+            <xs:attribute name="key"  use="optional" />
+            <xs:attribute name="cell" use="optional" />
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="text">
+        <xs:complexType>
+            <xs:attribute name="cell" use="optional" />
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="element">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="allElement">
+                    <xs:attribute name="name" use="required" />
+                    <xs:attribute name="key"  use="optional" />
+                    <xs:attribute name="cell" use="optional" />
+                    <xs:attribute name="rename" use="optional" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="dinamic">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="allElement">
+                    <xs:attribute name="sort" use="optional" />
+                    <xs:attribute name="resetArray" use="optional" >
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="reset"/>
+                                <xs:enumeration value="last"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    
+    
+    <xs:complexType name="allElement">
+        <!-- При такой записи, можно выбирать любую последовательность -->
+        <xs:choice minOccurs="0">
+            <xs:sequence>
+                <xs:element ref="attribute" minOccurs="0" maxOccurs="unbounded" />
+                <xs:sequence maxOccurs="unbounded">
+                    <xs:element ref="dinamic" minOccurs="0" />
+                    <xs:element ref="params" minOccurs="0" />
+                    <xs:element ref="text" minOccurs="0" />
+                </xs:sequence>
+            </xs:sequence>
+        </xs:choice>
+    </xs:complexType>
+</xs:schema>

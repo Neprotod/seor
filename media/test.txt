@@ -1,0 +1,172 @@
+<div id="navigation">
+    <h3>Навигация</h3>
+    <a class="link" href="//filemanager">filemanager</a>
+    <a class="link" href="//mysql">mysql</a>
+    <a class="link" href="//error">error</a>
+</div>
+<div id="status_box">
+    <h1>Статус</h1>
+    <form method="post" id="status_information">
+        <p class="status_version">
+            <span class="name">Версия: </span> 
+                        <input style="width:20px;" type="text" name="status[version][0]" value="0" />
+            .                        <input style="width:20px;" type="text" name="status[version][1]" value="0" />
+            .                        <input style="width:60px;" type="text" name="status[version][2]" value="1 alfa" />
+                                </p>
+
+        <p class="status_mode">
+            <span class="name">Режим:</span> 
+            <select name="status[mode]">
+                 <option value="1" >PRODUCTION</option>
+                 <option value="2" >STAGING</option>
+                 <option value="3" >TESTING</option>
+                 <option value="4" selected="selected">DEVELOPMENT</option>
+            </select>
+        </p>
+        <p class="status_id">
+            <span class="name">Идентификатор:</span> 
+            <input type="text" name="status[id]" value="0001" />
+        </p>
+        <p class="status_host">
+            <span class="name">Хост:</span>
+            <span class="string">seor</span>
+        </p>
+
+        <input type="submit" value="Переключить" />
+    </form>
+        <form method="post" id="status_deactivate">
+        <input type="submit" name="tree[deactivation]" value="Деактивировать" />
+    </form>
+        </div>
+<div id="view" class="">
+    <span id="span_view" style="border-bottom:1px solid;color:blue;cursor:pointer;">Вывести на экран</span>
+</div>
+<div id="admin" class="">
+    <span id="span_admin" style="border-bottom:1px solid;color:blue;cursor:pointer;">Административная панель</span>
+</div>
+<div id="box_module_error">
+    <div id="status_module" style="">
+        <p>Все подключенные модули:</p>
+        <hr />
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">action <span style="float:right;"> | версия: 1.0.0<span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">ads <span style="float:right;"> | версия: 1.0.0<span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">ajax <span style="float:right;"><span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">category <span style="float:right;"> | версия: 1.0.0<span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">error <span style="float:right;"><span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">filesystem <span style="float:right;"><span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">image <span style="float:right;"> | версия: 1.0.0<span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">mail <span style="float:right;"><span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">page <span style="float:right;"> | версия: 1.0.0<span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">pay <span style="float:right;"> | версия: 1.0.0<span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">post <span style="float:right;"> | версия: 1.0.0<span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">server <span style="float:right;"><span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">socket <span style="float:right;"><span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">system <span style="float:right;"> | версия: 1.0.0<span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">user <span style="float:right;"> | версия: 1.0.0<span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">workers <span style="float:right;"> | версия: 1.0.0<span></p>
+                <p style=" padding-bottom:5px;border-bottom:1px solid #000;">xml <span style="float:right;"><span></p>
+                
+    </div>
+        <div style="clear:both;"></div>
+</div>
+<div style="clear:both;"></div>
+<script type="text/javascript">
+var view = {
+    init : function(view,span,src){
+        var object = this;
+        
+        var obj_view = {
+            view : '',
+            span : '',
+            src : '',
+            $view : '',
+            content : ''
+        }
+        // Рабочий блок
+        obj_view.view = view;
+        
+        // span для создания фрейма
+        obj_view.span = span;
+        
+        // Адрес запуска
+        obj_view.src = src;
+        
+        obj_view.$view = $(obj_view.view);
+        // Сохраняем контент на возврат
+        obj_view.content = obj_view.$view.html();
+        
+        (object).get(obj_view);
+        
+    },
+    get : function(obj_view){
+        var object = this;
+        obj_view.$view.find(obj_view.span).click(function(){
+            // Убераем прокрутку
+            $('body').css('overflow','hidden');
+            
+            obj_view.$view.addClass('open');
+            obj_view.$view.html('<div class="box"><div class="close"><span class="addr"></span><span class="close_span">Закрыть</span><div style="clear:both;"></div></div><iframe src="'+obj_view.src+'"></iframe></div>');
+            $(""+obj_view.view+" .close span").click(function(){
+                obj_view.$view.html(obj_view.content);
+                obj_view.$view.removeClass('open');
+                (object).get(obj_view);
+                (object).loader(obj_view);
+                $('body').css('overflow','');
+            });
+            (object).loader(obj_view);
+        });
+    },
+    loader : function(obj_view){
+        var object = this;
+        var iframe = obj_view.$view.find('iframe');
+        /**/
+        iframe.css('background','url(/media/iframe/loadingBar.gif) no-repeat center #fff');
+        iframe.load(function(){
+            iframe.css('background','');
+        });
+        
+    }
+}
+view.init('#view','#span_view',"https://seor");
+view.init('#admin','#span_admin',"https://seor/0001");
+
+/*
+var admin = {
+    view : '#admin',
+    span : '#span_admin',
+    $view : '',
+    content : '',
+    init : function(){
+        var object = this;
+        (object).$view = $((object).view);
+        (object).content = (object).$view.html();
+        (object).get();
+        
+    },
+    get : function(){
+        var object = this;
+        (object).$view.find((object).span).click(function(){
+            (object).$view.addClass('open');
+            (object).$view.html('<div class="box"><div class="close"><span class="close_span">Закрыть</span><div style="clear:both;"></div></div><iframe src="https://seor/0001"></iframe></div>');
+            $(""+(object).view+" .close span").click(function(){
+                (object).$view.html((object).content);
+                (object).$view.removeClass('open');
+                (object).get();
+                (object).loader();
+            });
+            (object).loader();
+        });
+    },
+    loader : function(){
+        var object = this;
+        var iframe = (object).$view.find('iframe');
+        /**//*
+        iframe.css('background','url(/media/iframe/loadingBar.gif) no-repeat center #fff');
+        iframe.load(function(){
+            iframe.css('background','');
+        });
+        
+    }
+}
+admin.init();*/
+</script>

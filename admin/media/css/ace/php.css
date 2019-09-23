@@ -1,0 +1,29 @@
+.ace_scroller{
+    background-color: #FEFCF5 !important;
+}
+.ace_variable{
+    color: #000080 !important;
+}
+.ace_string{
+    color: #808080 !important;
+}
+.ace_function{
+    color: #0000FF !important;
+    font-weight:bold !important;
+}
+.ace_keyword{
+    color: #0000FF !important;
+    font-weight:bold !important;
+}
+.ace_constant{
+    color: #0000FF !important;
+    font-weight:bold !important;
+}
+.ace_operator {
+    color: #C800A4 !important;
+    font-weight:normal !important;
+}
+.ace_numeric{
+    color: #FF8000 !important;
+    font-weight:normal !important;
+}

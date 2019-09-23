@@ -1,0 +1,35 @@
+<div style="max-width:400px; overflow:hidden; margin:10px auto; background:#fff; font-family: 'PT Sans', sans-serif; position:relative; border-radius:3px; box-shadow: 0 0 4px 0 rgba(0,0,0,.08), 0 2px 4px 0 rgba(0,0,0,.12); border:1px solid #ebebeb;">
+     <style>
+        @keyframes rainbow {
+            0% {
+                transform:translateX(0%)
+            }
+            100%{
+                transform:translateX(-50%)
+            }
+        }
+    </style>
+    <a href="<?=Core::$root_url?>" style="display: block;width: 142px;height: 131px;background: url('<?=Core::$root_url?>/application/template/default/img/SEOR_logo_14v_142.png'); top:20px; margin:10px auto; "></a>
+    <div style="padding:20px;">
+        <div style="font-size:16px;">Заявка на подтверждение данных отклонена.</div>
+        <?php
+        if(isset($note) AND !empty($note)):
+        ?>
+        <div>
+            <h3 style="font-family: 'PT Sans', sans-serif; font-size:20px; color:#000;">Причина отказа:</h3>
+            <div style="margin-bottom:10px;"><?=$note?></div>
+        </div>
+        <?php
+        endif;
+        ?>
+    </div>
+    <div style="font-size: 16px; font-family: 'Roboto', sans-serif; width: 240%;position: relative;left:0; animation: rainbow 5s infinite linear">
+        <div style="width: 50%;height: 6px;background: linear-gradient(to right, #2132b4 0%, ForestGreen 25%, Purple 50%, gold 75%, #2132b4 100%);float: left;"></div>
+        <div style="width: 50%;height: 6px;background: linear-gradient(to right, #2132b4 0%, ForestGreen 25%, Purple 50%, gold 75%, #2132b4 100%);float: left;"></div>
+    </div>
+    <div style="padding:20px; background:#f7f7f7; font-size:14px; color:#666; text-align:center;">
+        <a href="<?=Core::$root_url?>/support" style="padding:0px 0; text-decoration:underline; color:inherit;">
+            Связаться с тех поддержкой
+        </a>
+    </div>
+</div>

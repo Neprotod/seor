@@ -1,0 +1,69 @@
+# Generated pot
+# Translators:
+# Евгений Дождиков <edojdikov@krug-shar.ru>, 2017
+# NDS <dimonest@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: TinyMCE\n"
+"Report-Msgid-Bugs-To: http://moxiecode.com\n"
+"POT-Creation-Date: 2013-03-21 16:18:52+00:00\n"
+"PO-Revision-Date: 2013-04-23 19:38+0000\n"
+"Last-Translator: NDS <dimonest@gmail.com>, 2017\n"
+"Language-Team: Russian (https://www.transifex.com/moxiecode/teams/16136/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"\"#: i18n:\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "Action"
+msgstr "Действие"
+
+msgid "Shortcut"
+msgstr "Ярлык"
+
+msgid "Help"
+msgstr "Помощь"
+
+msgid "Address"
+msgstr "Адрес"
+
+msgid "Focus to menubar"
+msgstr "Фокус на панели меню"
+
+msgid "Focus to toolbar"
+msgstr "Фокус на панели инструментов"
+
+msgid "Focus to element path"
+msgstr "Фокус на элементе пути"
+
+msgid "Focus to contextual toolbar"
+msgstr "Фокус на контекстной панели инструментов"
+
+msgid "Insert link (if link plugin activated)"
+msgstr "Вставить ссылку (если плагин link активирован)"
+
+msgid "Save (if save plugin activated)"
+msgstr "Сохранить (если плагин save активирован)"
+
+msgid "Find (if searchreplace plugin activated)"
+msgstr "Найти (если плагин searchreplace активирован)"
+
+msgid "Plugins installed ({0}):"
+msgstr "Установленные плагины ({0}):"
+
+msgid "Premium plugins:"
+msgstr "Премиум плагины:"
+
+msgid "Learn more..."
+msgstr "Узнать больше..."
+
+msgid "You are using {0}"
+msgstr "Вы используете {0}"
+
+msgid "Plugins"
+msgstr "Плагины"
+
+msgid "Handy Shortcuts"
+msgstr "Горячие клавиши"

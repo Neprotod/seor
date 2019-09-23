@@ -1,0 +1,1221 @@
+<?xml version="1.0"?>
+<queries>
+    <group name="promo">
+        <query name="get">
+            <params>
+                <param>:promo</param>
+            </params>
+            <request type="SELECT">
+                <![CDATA[
+                SELECT id, time, promo, seor, days, clicks, ads, status, once
+                    FROM __promo
+                    WHERE promo = :promo AND status = 1 AND (time > NOW() OR time IS NULL);
+                ]]>
+            </request>
+        </query>
+    </group>
+    <group name="action">
+        <query name="get">
+            <params>
+                <param>:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT a.id, mt.type, a.class, a.method, a.parent, a.admin
+                    FROM __action a
+                    INNER JOIN __mcm_type mt ON a.id_mcm_type = mt.id
+                    WHERE a.id = :id;
+            </request>
+        </query>
+        <query name="action_list">
+            <params>
+                <param>:where</param>
+            </params>
+            <request type="SELECT">
+                SELECT a.id, mt.type, a.class, a.method, a.parent, a.admin, al.id AS id_params
+                    FROM __action_list al
+                    INNER JOIN __action a ON al.id_action = a.id
+                    INNER JOIN __mcm_type mt ON a.id_mcm_type = mt.id
+                    INNER JOIN __url u ON al.id_url = u.id
+                    WHERE :where;
+            </request>
+        </query>
+        <query name="action_params">
+            <params>
+                <param>:set</param>
+            </params>
+            <request type="SELECT">
+                SELECT id_action_list, param
+                    FROM __action_params
+                    WHERE id_action_list IN :set;
+            </request>
+        </query>
+    </group>
+    <group name="style">
+        <query name="get_default_style">
+            <params>
+                <param>:where</param>
+            </params>
+            <request type="SELECT">
+                SELECT s.id, s.id_template, type.type, s.name, s.path, t.name AS style_type, t.folder
+                    FROM style s
+                    INNER JOIN __style_type t ON s.style_type = t.id
+                    LEFT JOIN __type type ON s.id_type = type.id
+                    INNER JOIN __template template ON s.id_template = template.id
+                    WHERE :where
+                    ORDER BY s.position;
+            </request>
+        </query>
+        <query name="get_style">
+            <params>
+                <param>:where</param>
+            </params>
+            <request type="SELECT">
+                SELECT s.id, s.id_template, st.type, s.name, s.path, t.name AS style_type, t.folder, sc.status, sc.extends
+                    FROM __style s
+                    INNER JOIN __style_type t ON s.style_type = t.id
+                    INNER JOIN __style_content sc ON s.id = sc.id_style
+                    INNER JOIN __content_type ct ON sc.id_content_type = ct.id
+                    LEFT JOIN __type type ON ct.id_type = type.id
+                    LEFT JOIN __type st ON s.id_type = st.id
+                    WHERE :where;
+            </request>
+        </query>
+        <query name="get_js_css">
+            <params>
+                <param>:id_table</param>
+                <param>:id_type</param>
+            </params>
+            <request type="SELECT">
+                SELECT jc.id, jc.id_table, jc.id_type, jc.css, jc.js
+                FROM __js_css jc
+                INNER JOIN __type t ON t.id = jc.id_type
+                WHERE jc.id_table = :id_table AND jc.id_type = :id_type;
+            </request>
+        </query>
+    </group>
+    <group name="pages">
+        <query name="get_page">
+            <params>
+                <param>:date_format</param>
+                <param>:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT p.id, u.login, DATE_FORMAT(p.date,:date_format) AS date, p.title, url.url, url.id AS id_url, p.url_name, uc.url AS canonical, p.meta_title, p.description, r.id AS robots,r.robots AS robots_name, p.meta_keywords, p.status, DATE_FORMAT(p.modified, :date_format) AS modified, p.content, p.content_type, ct.name AS file_name, ct.exp AS ext, ct.path, t.id AS id_type, t.type, ct.class
+                    FROM __page p
+                    INNER JOIN __admin_user u ON p.id_admin_user = u.id
+                    INNER JOIN __type t ON t.type = 'page'
+                    INNER JOIN __robots r ON p.robots = r.id
+                    LEFT JOIN __content_type ct ON p.content_type = ct.id
+                    LEFT JOIN __url url ON p.url = url.id
+                    LEFT JOIN url uc ON uc.id = url.id_canonical
+                    WHERE p.id = :id AND p.status = 1;
+            </request>
+        </query>
+    </group>
+    <group name="accounts">
+        <group name="settings">
+            <query name="email_test">
+                <description>
+                    Проверь существует ли такой email
+                </description>
+                <params>
+                    <param>:email</param>
+                </params>
+                <request type="SELECT">
+                   SELECT id
+                        FROM user
+                        WHERE email = :email;
+                </request>
+            </query>
+            <query name="session_action">
+                <description>
+                    Проверь существует ли такой email
+                </description>
+                <params>
+                    <param>:id_user</param>
+                </params>
+                <request type="SELECT">
+                   SELECT name, value
+                        FROM session
+                        WHERE id_user = :id_user AND name = 'action';
+                </request>
+            </query>
+        </group> 
+        <group name="verification">
+            <query name="get_id">
+                <description>
+                    Получить id верификации
+                </description>
+                <params>
+                    <param>:id_user</param>
+                </params>
+                <request type="SELECT">
+                   SELECT id_user
+                        FROM __user_verification
+                        WHERE id_user = :id_user;
+                        LIMIT 1;
+                </request>
+            </query>
+            <query name="insert">
+                <description>
+                    Вставляем подтверждение данных
+                </description>
+                <params>
+                    <param>:id_user</param>
+                    <param>:detail</param>
+                </params>
+                <request type="INSERT">
+                   INSERT INTO __user_verification(id_user, detail) VALUES
+                    (:id_user, :detail)
+                    ON DUPLICATE KEY UPDATE detail = VALUES(`detail`);
+                </request>
+            </query>
+        </group> 
+    </group> 
+    <group name="lang">
+        <query name="get">
+            <description>
+                Получить все языки на определенном языке
+            </description>
+            <params>
+                <param>:lang_code</param>
+            </params>
+            <request type="SELECT">
+               SELECT lc.id, IF(l.name IS NULL, CONCAT(UPPER(LEFT(lc.title,1)),SUBSTRING(lc.title,2)), CONCAT(UPPER(LEFT(l.name,1)),SUBSTRING(l.name,2))) AS name
+                    FROM language_code lc
+                    LEFT JOIN language l ON lc.id = l.id_code AND l.id_code_translate = :lang_code
+                    ORDER BY l.position DESC, name;
+            </request>
+        </query>
+        <query name="get_code">
+            <description>
+                Получить код языка
+            </description>
+            <params>
+                <param>:lang_code</param>
+            </params>
+            <request type="SELECT">
+               SELECT id, title, code
+                    FROM language_code
+                    WHERE code = LOWER(:lang_code)
+                    LIMIT 1;
+            </request>
+        </query>
+    </group> 
+    <group name="spec">
+        <query name="get">
+            <description>
+                Получить все специализации
+            </description>
+            <params>
+                <param>:lang_code</param>
+            </params>
+            <request type="SELECT">
+                SELECT sc.id, IF(s.name IS NULL, CONCAT(UPPER(LEFT(sc.title,1)),SUBSTRING(sc.title,2)), CONCAT(UPPER(LEFT(s.name,1)),SUBSTRING(s.name,2))) AS name
+                    FROM specialization_code sc
+                    LEFT JOIN  specialization s ON sc.id = s.id_specialization_code AND s.id_code_translate = :lang_code
+                    ORDER BY name;
+            </request>
+        </query>
+    </group> 
+    <group name="price">
+        <query name="get">
+            <description>
+                Получить все страны
+            </description>
+            <params>
+                <param>:user_type</param>
+            </params>
+            <request type="SELECT">
+                SELECT p.id, pt.name AS type_name, p.name, p.title, 
+                    if(pc.amount IS NULL, p.amount, pc.amount) AS amount,
+                    if(pc.clicks IS NULL, p.clicks, pc.clicks) AS clicks,
+                    if(pc.adc IS NULL, p.adc, pc.adc) AS adc
+                    FROM __price p
+                    INNER JOIN __price_type pt ON pt.id = p.id_price_type
+                    LEFT JOIN __price_clarification pc ON pc.id_price = p.id AND id_user_type = :user_type
+                    ORDER BY p.id;
+            </request>
+        </query>
+    </group> 
+    <group name="country">
+        <query name="get">
+            <description>
+                Получить все страны
+            </description>
+            <params>
+                <param>:lang_code</param>
+            </params>
+            <request type="SELECT">
+                SELECT cc.id, IF(c.name IS NULL, CONCAT(UPPER(LEFT(cc.title,1)),SUBSTRING(cc.title,2)), CONCAT(UPPER(LEFT(c.name,1)),SUBSTRING(c.name,2))) AS name, cc.phone
+                    FROM country_code cc
+                    LEFT JOIN  country c ON cc.id = c.id_country_code AND c.id_code_translate = :lang_code
+                    ORDER BY name;
+            </request>
+        </query>
+    </group>
+    <group name="currency">
+        <query name="name">
+            <description>
+                Получить все имена валют
+            </description>
+            <request type="SELECT">
+                SELECT id, UPPER(name) AS name, title
+                    FROM currency_name;
+            </request>
+        </query>
+        <query name="get">
+            <description>
+                Получить все валюты
+            </description>
+            <request type="SELECT">
+                SELECT id, id_currency_name, rate
+                    FROM currency;
+            </request>
+        </query>
+        <query name="rate">
+            <description>
+                Получить все валюты
+            </description>
+            <request type="SELECT">
+                SELECT cr.id_currency, UPPER(cn.name) AS name, cr.rate
+                    FROM __currency_rate cr
+                    INNER JOIN __currency c ON cr.id_currency = c.id
+                    INNER JOIN __currency_name cn ON cn.id = c.id;
+            </request>
+        </query>
+    </group>
+    <group name="categories">
+        <query name="get_category">
+            <params>
+                <param>:date_format</param>
+                <param>:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT c.id, c.parent_id, u.login, DATE_FORMAT(c.date,:date_format) AS date, c.title, c.meta_title, url.url, url.id AS id_url, c.url_name, uc.url AS canonical, c.meta_keywords, c.description, r.id AS robots, r.robots AS robots_name, c.status, c.static, DATE_FORMAT(c.modified,:date_format) AS modified, c.content_type, c.content, c.annotation, ct.name AS file_name, ct.exp AS ext, ct.path, ct.class, c.position, t.id AS id_type
+                FROM __categories c
+                INNER JOIN __admin_user u ON c.id_admin_user = u.id
+                INNER JOIN __type t ON t.type = 'category'
+                INNER JOIN __robots r ON c.robots = r.id
+                LEFT JOIN __content_type ct ON c.content_type = ct.id
+                LEFT JOIN __url url ON c.url = url.id
+                LEFT JOIN url uc ON uc.id = url.id_canonical
+                WHERE c.id = :id AND c.status = 1;
+            </request>
+        </query>
+        <query name="get_categories">
+            <params>
+                <param>:date_format</param>
+                <param>:where</param>
+            </params>
+            <request type="SELECT">
+                SELECT c.id, c.parent_id, u.login, DATE_FORMAT(c.date,:date_format) AS date, c.title, c.meta_title, url.url, c.url_name,  c.description, r.id AS robots,r.robots AS robots_name, c.status, c.static, DATE_FORMAT(c.modified,:date_format) AS modified, c.content_type, ct.name AS file_name, ct.exp, ct.class, c.position
+                FROM __categories c
+                INNER JOIN __admin_user u ON c.id_admin_user = u.id
+                INNER JOIN __type t ON t.type = 'category'
+                INNER JOIN __robots r ON c.robots = r.id
+                LEFT JOIN __content_type ct ON c.content_type = ct.id
+                LEFT JOIN __url url ON c.url = url.id
+                WHERE :where
+                ORDER BY c.parent_id, c.position;
+            </request>
+        </query>
+    </group> 
+    <group name="category_page">
+        <query name="get">
+            <description>
+                Получить id страниц по категориям
+            </description>
+            <params>
+                <param>:where</param>
+            </params>
+            <request type="SELECT">
+                SELECT id, id_category, id_page, position
+                FROM __category_page cp
+                WHERE :where;
+            </request>
+        </query>
+    </group> 
+    <group name="url">
+        <description>
+            Работает с URL
+        </description>
+        <query name="get_url">
+            <params>
+                <param>:url</param>
+            </params>
+            <request type="SELECT">
+                SELECT u.id, u.url, u.id_table, uc.url AS canonical, u.id_canonical,u.id_type ,t.type, u.id_content_type
+                    FROM url u
+                    INNER JOIN type t ON t.id = u.id_type
+                    LEFT JOIN url uc ON uc.id = u.id_canonical
+                    WHERE u.url = :url OR (u.regex = 1 AND :url REGEXP CONCAT("^", u.url, "$")) ORDER BY u.regex LIMIT 1;
+            </request>
+        </query>
+        <query name="drop_url">
+            <params>
+                <param>:url</param>
+            </params>
+            <request type="SELECT">
+                SELECT ud.id, ud.url_reset, ud.id_url, ud.time_drop, u.url
+                    FROM url_drop ud
+                    INNER JOIN url u ON u.id = ud.id_url
+                    WHERE ud.url_reset = :url;
+            </request>
+        </query>
+    </group>
+    <group name="ads">
+        <description>
+            Работает с URL
+        </description>
+        <query name="get_user">
+            <params>
+                <param>:id</param>
+                <param>:where</param>
+            </params>
+            <request type="SELECT">
+                SELECT a.id, a.id_user, a.title, a.salary, a.id_currency, a.description, a.time, a.status, a.approved, a.id_country, a.count_view
+                    FROM ads a
+                    WHERE a.id_user = :id
+                    :where;
+            </request>
+        </query>
+        <query name="all">
+            <params>
+                <param>:set</param>
+                <param>:where</param>
+                <param>:table</param>
+            </params>
+            <request type="SELECT">
+                SELECT a.id, a.id_user, a.title, a.salary, a.id_currency, a.description, a.time, a.status, a.approved, acc.complete, a.id_country :table
+                    FROM ads a
+                    INNER JOIN accounts acc ON a.id_user = acc.id_user AND acc.days != 0
+                    INNER JOIN user u ON a.id_user = u.id AND u.status != 0
+                    :set
+                    WHERE a.status = 1 AND a.approved = 1 
+                    :where
+                    ORDER BY a.time DESC;
+            </request>
+        </query>
+        <query name="get">
+            <params>
+                <param>:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT id, id_user, title, salary, id_currency, description, time, status, approved, id_country, pay
+                    FROM ads
+                    WHERE id = :id;
+            </request>
+        </query>
+        <query name="count">
+            <params>
+                <param>:id_user</param>
+            </params>
+            <request type="SELECT">
+                SELECT `all`, active, disabled, moder, draft
+                    FROM ads_count
+                    WHERE id_user = :id_user;
+            </request>
+        </query>
+        <query name="language">
+            <params>
+                <param check="0">:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT al.id_ads, al.id_language
+                    FROM ads_language al
+                    INNER JOIN language l ON al.id_language = l.id
+                    WHERE id_ads IN(:id)
+                    ORDER BY l.position DESC;
+            </request>
+        </query>
+        <query name="specialization">
+            <params>
+                <param check="0">:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT id_ads, id_specialization
+                    FROM ads_specialization
+                    WHERE id_ads IN(:id);
+            </request>
+        </query>
+        <query name="all_ads_language">
+            <request type="SELECT">
+                SELECT DISTINCT al.id_language 
+                    FROM ads_language al
+                    INNER JOIN ads a ON al.id_ads = a.id AND a.status = 1
+                    INNER JOIN user u ON u.id = a.id_user AND u.status = 1;
+            </request>
+        </query>
+        <query name="all_ads_country">
+            <request type="SELECT">
+                SELECT DISTINCT a.id_country 
+                    FROM ads a
+                    INNER JOIN user u ON u.id = a.id_user AND u.status = 1
+                    WHERE a.status = 1;
+            </request>
+        </query>
+    </group>
+    <group name="workers">
+        <query name="all">
+            <params>
+                <param>:set</param>
+                <param>:where</param>
+                <param>:table</param>
+            </params>
+            <request type="SELECT">
+                SELECT u.id, u.email, u.second_email, a.id_country, a.name, a.complete, a.birthday :table
+                    FROM user u
+                    INNER JOIN accounts a ON u.id = a.id_user
+                    :set
+                    WHERE u.status = 1 AND u.id_user_type = 1 AND a.complete &gt; 0
+                    :where
+                    ORDER BY u.registered DESC;
+            </request>
+        </query>
+        <query name="language">
+            <params>
+                <param check="0">:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT ul.id_user, ul.id_language
+                    FROM user_language ul
+                    INNER JOIN language l ON ul.id_language = l.id
+                    WHERE id_user IN(:id)
+                    ORDER BY l.position DESC;
+            </request>
+        </query>
+        <query name="specialization">
+            <params>
+                <param check="0">:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT id_user, id_specialization
+                    FROM user_specialization
+                    WHERE id_user IN(:id);
+            </request>
+        </query>
+        <query name="all_user_language">
+            <request type="SELECT">
+                SELECT DISTINCT ul.id_language 
+                    FROM user_language ul
+                    INNER JOIN user u ON u.id = ul.id_user AND u.status = 1;
+            </request>
+        </query>
+        <query name="all_user_country">
+            <request type="SELECT">
+                SELECT DISTINCT a.id_country 
+                    FROM user u
+                    INNER JOIN accounts a ON u.id = a.id_user
+                    WHERE u.status = 1 AND a.complete &gt; 0;
+            </request>
+        </query>
+        <query name="simple_get">
+            <params>
+                <param>:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT u.id, u.count_view
+                    FROM user u
+                    WHERE u.id = :id;
+            </request>
+        </query>
+        <query name="complex_get">
+            <params>
+                <param>:id</param>
+                <param>:id_user</param>
+            </params>
+            <request type="SELECT">
+                 SELECT u.id, u.count_view, if(pu.id, 1, 0) AS pay
+                    FROM user u
+                    LEFT JOIN __pay_user pu ON pu.id_user_worker = u.id AND pu.id_user = :id_user
+                    WHERE u.id = :id;
+            </request>
+        </query>
+    </group>
+    <group name="orders">
+        <description>
+            Работает с URL
+        </description> 
+        <query name="get_detail">
+            <request type="SELECT">
+                SELECT id, name, description
+                    FROM __orders_detail;
+            </request>
+        </query>
+        <query name="get_detail_where">
+            <description>
+                Получить id описания для заказа.
+            </description> 
+            <params>
+                <param>:where</param>
+                <param>:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT id, name, description
+                    FROM __orders_detail
+                    WHERE :where = :id;
+            </request>
+        </query>
+        <query name="get_pay">
+            <description>
+                Получить заказ.
+            </description> 
+            <params>
+                <param>:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT op.id, op.id_user, op.id_orders_detail, op.amount, op.id_currency, op.state, op.id_pay_type, op.id_order_action, op.time, op.params, UPPER(cn.name) AS currency_name, cr.rate, oa.name AS action_name, od.description
+                    FROM __orders_pay op
+                    INNER JOIN currency_name cn ON cn.id = op.id_currency
+                    INNER JOIN currency_rate cr ON cr.id_currency = op.id_currency
+                    INNER JOIN orders_action oa ON oa.id = op.id_order_action
+                    INNER JOIN orders_detail od ON od.id = op.id_orders_detail
+                    WHERE op.id = :id
+            </request>
+        </query>
+        <query name="orders_action">
+            <description>
+                Получить id действия для заказа.
+            </description> 
+            <params>
+                <param>:where</param>
+                <param>:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT id, name, description
+                    FROM __orders_action
+                    WHERE :where = :id
+            </request>
+        </query>
+    </group>
+    <group name="ad">
+        <description>
+            Работает с вакансией, получение, покупка вакансии и контаков.
+        </description>
+        <query name="simple_get">
+            <params>
+                <param>:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT a.id, a.id_user, a.title, a.salary, a.id_currency, a.description, a.time, a.status, a.approved, a.id_country, a.count_view
+                    FROM ads a
+                    WHERE a.id = :id AND a.approved = 1;
+            </request>
+        </query>
+        <query name="complex_get">
+            <params>
+                <param>:id</param>
+                <param>:id_user</param>
+            </params>
+            <request type="SELECT">
+                SELECT a.id, a.id_user, a.title, a.salary, a.id_currency, a.description, a.time, a.status, a.approved, a.id_country, if(pa.id OR pc.id, 1, 0) AS pay, if(pc.id AND pa.id IS NULL, TIMEDIFF(pc.expiration, NOW()), NULL) AS expiration, a.count_view
+                    FROM __ads a
+                    LEFT JOIN __pay_ads pa ON pa.id_ads = a.id AND pa.id_user = :id_user
+                    LEFT JOIN __pay_contacts pc ON pc.id_user = :id_user AND pc.id_user_employer = a.id_user AND pc.expiration &gt; NOW()
+                    WHERE a.id = :id AND a.approved = 1;
+            </request>
+        </query>
+        <query name="pay_contact">
+            <description>
+                Записывает, какие контакты были куплены
+            </description>
+            <params>
+                <param>:id_user</param>
+                <param>:id_user_employer</param>
+            </params>
+            <request type="INSERT">
+                INSERT INTO __pay_contacts(id_user, id_user_employer, time, expiration) VALUES
+                    (:id_user, :id_user_employer, NOW(), time + INTERVAL hours MINUTE)
+                    ON DUPLICATE KEY UPDATE time = NOW(), expiration = time + INTERVAL hours MINUTE;
+            </request>
+        </query>
+    </group>
+    <group name="fields">
+         <query name="get">
+            <description>
+                Получить дополнительные поля
+            </description>
+            <params>
+                <param>:type</param>
+                <param>:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT f.id, fn.name, fn.id AS name_id, f.var, f.text, f.position
+                FROM __fields f
+                INNER JOIN __fields_name fn ON fn.id = f.id_name
+                INNER JOIN __type t ON t.id = f.id_type
+                WHERE t.type = :type AND f.id_table = :id
+                ORDER BY f.position;
+            </request>
+        </query>
+    </group>
+    <group name="user">
+        <group name="notification">
+            <query name="get">
+                <description>
+                    Получить уведомления пользователя
+                </description>
+                <params>
+                    <param>:id_user</param>
+                </params>
+                <request type="SELECT">
+                    SELECT n.id, n.title, n.content, n.time, n.seen, nt.type
+                    FROM __notification n
+                    LEFT JOIN notification_type nt ON nt.id = id_type
+                    WHERE id_user = :id_user
+                    ORDER BY n.time DESC LIMIT 15;
+                </request>
+            </query>
+            <query name="get_type">
+                <description>
+                    Получить типы уведомлений
+                </description>
+                <request type="SELECT">
+                    SELECT id, type
+                    FROM __notification_type
+                    ORDER BY id;
+                </request>
+            </query>
+        </group>
+        <group name="field">
+            <query name="get">
+                <description>
+                    Получить поля пользователя
+                </description>
+                <params>
+                    <param check="0">:id_user</param>
+                </params>
+                <request type="SELECT">
+                    SELECT fu.id, fu.id_user, fu.id_name, fn.name, fn.title, fu.var, fu.text, fu.position
+                        FROM __fields_user fu
+                        INNER JOIN __fields_name fn ON fn.id = fu.id_name
+                        WHERE fu.id_user IN (:id_user);
+                </request>
+            </query>
+            <query name="name">
+                <description>
+                    Получить поля пользователя
+                </description>
+                <request type="SELECT">
+                    SELECT id, name, title
+                        FROM __fields_name;
+                </request>
+            </query>
+        </group>
+        <query name="get_user_page">
+            <description>
+                Получить страницу пользователя
+            </description>
+            <params>
+                <param>:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT p.id, p.title, p.content, p.content_type, ct.name AS file_name, ct.exp AS ext, ct.path, t.id AS id_type, t.type, ut.type AS user_type, ut.id AS id_user_type
+                    FROM __user_page p
+                    INNER JOIN __type t ON t.type = 'user'
+                    LEFT JOIN __content_type ct ON p.content_type = ct.id
+                    LEFT JOIN __user_type ut ON p.user_type = ut.id
+                    WHERE p.id = :id AND p.status = 1;
+            </request>
+        </query>
+        <query name="user_type">
+            <description>
+                Получить типы
+            </description>
+            <request type="SELECT">
+                SELECT id, type, description, legal, employer
+                FROM __user_type
+                ORDER BY id, legal ;
+            </request>
+        </query>
+        <query name="get">
+            <description>
+                Получить пользователя
+            </description>
+            <params>
+                <param>:where</param>
+            </params>
+            <request type="SELECT">
+                SELECT u.id, u.email, u.second_email, u.pass, u.id_user_type, ut.type, ut.legal, u.registered, u.activation, u.status, u.logo, ut.employer, a.seor, a.days, a.clicks, a.ads, a.took_days, a.message, a.notification, a.message, a.notification, a.expiration, a.complete, a.birthday, a.name, a.id_country, a.took_days + INTERVAL a.days DAY AS test_expiration
+                FROM __user u
+                LEFT JOIN __user_type ut ON ut.id = u.id_user_type
+                INNER JOIN __accounts a ON u.id = a.id_user
+                WHERE :where;
+            </request>
+        </query>
+        <query name="phone">
+            <description>
+                Получить телефоны пользователя
+            </description>
+            <params>
+                <param>:id_user</param>
+            </params>
+            <request type="SELECT">
+                SELECT p.id, p.id_user, p.id_country_code, p.phone
+                FROM __phone p
+                WHERE p.id_user = :id_user;
+            </request>
+        </query>
+        <query name="language">
+            <params>
+                <param check="0">:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT ul.id_user, ul.id_language
+                    FROM user_language ul
+                    INNER JOIN language l ON ul.id_language = l.id
+                    WHERE id_user IN(:id)
+                    ORDER BY l.position DESC;
+            </request>
+        </query>
+        <query name="specialization">
+            <params>
+                <param check="0">:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT id_user, id_specialization
+                    FROM user_specialization
+                    WHERE id_user IN(:id);
+            </request>
+        </query>
+        <query name="insert">
+            <description>
+                Динамический insert
+            </description>
+            <params>
+                <param>:email</param>
+                <param>:pass</param>
+                <param>:key</param>
+                <param>:id_user_type</param>
+            </params>
+            <request type="INSERT">
+                INSERT INTO __user(email, pass, activation, id_user_type) VALUES
+                    (:email, :pass, :key, :id_user_type);
+            </request>
+        </query>
+    </group>
+    <group name="vis">
+        <query name="pages">
+            <params>
+                <param>:set</param>
+            </params>
+            <request type="SELECT">
+                SELECT p.id, p.title, url.url, f.var
+                    FROM __page p
+                    INNER JOIN __fields f ON p.id = f.id_table 
+                                        AND f.id_type = 1
+                    INNER JOIN __fields_name fn ON f.id_name = fn.id 
+                    LEFT JOIN __url url ON p.url = url.id
+                    WHERE p.id IN :set AND p.status = 1 AND fn.name = 'image_path';
+            </request>
+        </query>
+    </group>
+    <group name="tokens">
+        <description>
+            Работа с токенами
+        </description>
+        <query name="get">
+            <params>
+                <param>:where</param>
+            </params>
+            <request type="SELECT">
+                SELECT id_user, token, lifetime
+                    FROM __tokens
+                    WHERE :where
+                    LIMIT 1;
+            </request>
+        </query>
+        <query name="insert">
+            <params>
+                <param>:id_user</param>
+                <param>:token</param>
+                <param>:lifetime</param>
+            </params>
+            <request type="INSERT">
+                INSERT INTO __tokens(id_user,token,lifetime) VALUES
+                    (:id_user, :token, :lifetime) ON DUPLICATE KEY UPDATE  token = :token, lifetime = :lifetime;
+            </request>
+        </query>
+    </group>
+    <group name="template">
+        <description>
+            Работает с темами
+        </description>
+        <query name="get_template">
+            <request type="SELECT">
+                SELECT id, name
+                    FROM __template
+                    WHERE status = 1
+                    LIMIT 1
+            </request>
+        </query>
+    </group>
+    <group name="session">
+        <description>
+            Работает с сессиями
+        </description>
+        <query name="get">
+            <params>
+                <param>:id</param>
+            </params>
+            <request type="SELECT">
+                SELECT name, value
+                    FROM __session
+                    WHERE id_user = :id
+            </request>
+        </query>
+        <query name="insert">
+            <params>
+                <param>:set</param>
+            </params>
+            <request type="INSERT">
+                INSERT INTO __session(id_user, name, value) VALUES
+                    :set
+                    ON DUPLICATE KEY UPDATE value = VALUES(value);
+            </request>
+        </query>
+        <query name="update">
+            <params>
+                <param>:set</param>
+                <param>:where</param>
+                <param>:id_user</param>
+            </params>
+            <request type="UPDATE">
+                UPDATE __session SET value = CASE
+                    :set
+                    END
+                    WHERE name IN :where AND id_user = :id_user;
+            </request>
+        </query>
+    </group>
+    <group name="logs">
+        <description>
+            Логи на сайте
+        </description>
+        <group name="login">
+            <description>
+                Логи входа на сайте
+            </description>
+            <query name="get">
+                <params>
+                    <param>:where</param>
+                </params>
+                <request type="SELECT">
+                    SELECT id_user, user_agent, ip
+                        FROM __logs_login
+                        WHERE :where;
+                </request>
+            </query>
+            <query name="insert">
+                <params>
+                    <param>:id_user</param>
+                    <param>:user_agent</param>
+                    <param>:ip</param>
+                </params>
+                <request type="INSERT">
+                    INSERT INTO __logs_login(id_user, user_agent, ip)
+                        VALUES(:id_user, :user_agent, :ip) ON DUPLICATE KEY UPDATE  count = count + 1;
+                </request>
+            </query>
+            <query name="insert_time">
+                <params>
+                    <param>:id</param>
+                </params>
+                <request type="INSERT">
+                    INSERT INTO __logs_time(id_logs_login)
+                        VALUES(:id);
+                </request>
+            </query>
+        </group>
+        <group name="activation">
+            <description>
+                Логи активации пользователей
+            </description>
+            <query name="get">
+                <params>
+                    <param>:where</param>
+                </params>
+                <request type="SELECT">
+                    SELECT id_user, activation
+                        FROM __logs_activation
+                        WHERE :where;
+                </request>
+            </query>
+            <query name="insert">
+                <params>
+                    <param>:id_user</param>
+                    <param>:key</param>
+                </params>
+                <request type="INSERT">
+                    INSERT INTO __logs_activation(id_user, activation)
+                        VALUES(:id_user, :key);
+                </request>
+            </query>
+        </group>
+        <group name="promo">
+            <description>
+                Логи промокодов
+            </description>
+            <query name="get">
+                <params>
+                    <param>:id_user</param>
+                    <param>:id_promo</param>
+                </params>
+                <request type="SELECT">
+                    SELECT time
+                        FROM __logs_promo
+                        WHERE id_user = :id_user AND id_promo = :id_promo;
+                </request>
+            </query>
+            <query name="insert">
+                <params>
+                    <param>:id_user</param>
+                    <param>:id_promo</param>
+                </params>
+                <request type="INSERT">
+                    INSERT INTO __logs_promo(id_user,id_promo) VALUES
+                        (:id_user, :id_promo);
+                </request>
+            </query>
+        </group>
+    </group>
+    <group name="transaction">
+        <query name="autocommit">
+            <description>
+                Убрать транзакцию
+            </description>
+            <params>
+                <param>:set</param>
+            </params>
+            <request type="SET">
+                SET AUTOCOMMIT = :set;
+            </request>
+        </query>
+        <query name="savepoint">
+            <description>
+                Начало транзакции
+            </description>
+            <params>
+                <param>:set</param>
+            </params>
+            <request type="TRANSACTION">
+                SAVEPOINT `:set`;
+            </request>
+        </query>
+        <query name="release_savepoint">
+            <description>
+                Начало транзакции
+            </description>
+            <params>
+                <param>:set</param>
+            </params>
+            <request type="TRANSACTION">
+                RELEASE SAVEPOINT `:set`;
+            </request>
+        </query>
+        <query name="rollback_savepoint">
+            <description>
+                Начало транзакции
+            </description>
+            <params>
+                <param>:set</param>
+            </params>
+            <request type="TRANSACTION">
+                ROLLBACK TO SAVEPOINT `:set`;
+            </request>
+        </query>
+        <query name="start">
+            <description>
+                Начало транзакции
+            </description>
+            <request type="TRANSACTION">
+                START TRANSACTION;
+            </request>
+        </query>
+        <query name="commit">
+            <description>
+                Подтверждение транзакции
+            </description>
+            <request type="TRANSACTION">
+                COMMIT;
+            </request>
+        </query>
+        <query name="rollback">
+            <description>
+                Подтвержение транзакции
+            </description>
+            <request type="TRANSACTION">
+                ROLLBACK;
+            </request>
+        </query>
+    </group>
+    <group name="support">
+        <query name="get">
+            <params>
+                <param>:where</param>
+            </params>
+            <request type="SELECT">
+                SELECT id, id_user, title, DATE_FORMAT(time,"%d/%m/%Y") AS time , last_activ, status, new_user
+                    FROM __accounts_support
+                    WHERE :where ORDER BY last_activ DESC;
+            </request>
+        </query>
+        <query name="message">
+            <params>
+                <param>:id_accounts_support</param>
+            </params>
+            <request type="SELECT">
+                SELECT sm.id, sm.message, DATE_FORMAT(sm.time,"%d/%m/%Y") AS time , sm.id_admin_user, sm.seen, au.display_name
+                    FROM __support_message sm
+                    LEFT JOIN admin_user au ON au.id = sm.id_admin_user
+                    WHERE sm.id_accounts_support = :id_accounts_support
+                    ORDER BY sm.time DESC;
+            </request>
+        </query>
+    </group>
+    <group name="note">
+        <query name="ads">
+            <params>
+                <param>:id_ads</param>
+            </params>
+            <request type="SELECT">
+                SELECT id, id_ads, note
+                    FROM __moderator_notes
+                    WHERE id_ads = :id_ads;
+            </request>
+        </query>
+    </group>
+
+    
+    
+    
+    
+<!-- *******ОДИНОЧНЫЕ ЗАПРОСЫ********** -->    
+    
+    
+    
+    <query name="settings">
+        <description>
+            Загружает стили
+        </description>
+        <request type="SELECT">
+            SELECT name, value
+                FROM __settings
+        </request>
+    </query>
+    
+    <query name="UTC">
+        <description>
+            Обновление
+        </description>
+        <params>
+            <param>:UTC</param>
+        </params>
+        <request type="SET">
+            SET @@session.time_zone = :UTC;
+        </request>
+    </query>
+    <query name="drop_url">
+        <description><![CDATA[
+            Перенаправляет URL
+        ]]></description>
+        <params>
+            <param>:url</param>
+        </params>
+        <request type="SELECT">
+            SELECT d.url_reset, u.url, d.time_drop
+                FROM __url_drop d
+                INNER JOIN __url u ON d.id_url = u.id
+                WHERE d.url_reset = :url LIMIT 1;
+        </request>
+    </query>
+    <query name="get_page">
+        <description><![CDATA[
+           Получить страницу
+        ]]></description>
+        <params>
+            <param>:id</param>
+        </params>
+        <request type="SELECT">
+            SELECT p.id, u.nicename, p.date, p.title, p.url, p.meta_title, p.description, p.robots, p.status, p.comment_status, p.modified, p.content, p.annotation, c.name AS file_name, c.ext, c.path, p.css, p.js
+                FROM __page p
+                INNER JOIN __user u ON p.id_author = u.id
+                INNER JOIN __content_type c ON p.content_type = c.id
+                WHERE p.id = :id LIMIT 1;
+        </request>
+    </query>
+    <query name="update">
+        <description>
+            Обновление
+        </description>
+        <params>
+            <param>:table</param>
+            <param>:set</param>
+            <param>:id</param>
+        </params>
+        <request type="UPDATE">
+            UPDATE __:table
+            SET 
+                :set
+            WHERE id = :id;
+        </request>
+    </query>
+    <query name="update_where">
+        <description>
+            Обновление
+        </description>
+        <params>
+            <param>:table</param>
+            <param>:set</param>
+            <param>:where</param>
+        </params>
+        <request type="UPDATE">
+            UPDATE __:table
+            SET 
+                :set
+            WHERE :where;
+        </request>
+    </query>
+    <query name="delete">
+        <description>
+            Удалить запись
+        </description>
+        <params>
+            <param>:table</param>
+            <param>:where</param>
+            <param>:insert</param>
+        </params>
+        <request type="DELETE">
+            DELETE FROM __:table
+                WHERE :where IN :insert
+        </request>
+    </query>
+    <query name="delete_where">
+        <description>
+            Удалить запись
+        </description>
+        <params>
+            <param>:table</param>
+            <param>:where</param>
+        </params>
+        <request type="DELETE">
+            DELETE FROM __:table
+                WHERE :where
+        </request>
+    </query>
+    <query name="insert">
+        <description>
+            Динамический insert
+        </description>
+        <params>
+            <param>:table</param>
+            <param>:where</param>
+            <param>:set</param>
+        </params>
+        <request type="INSERT">
+            INSERT INTO __:table(:where) VALUES
+                :set;
+        </request>
+    </query>
+</queries>

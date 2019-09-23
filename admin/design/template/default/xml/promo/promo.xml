@@ -1,0 +1,14 @@
+<root name="users" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="promo">
+        <element name="promo">
+            <attribute name="id" cell="id" />
+            <attribute name="promo" cell="promo" />
+            <attribute name="time" cell="time" />
+            <attribute name="seor" cell="seor" />
+            <attribute name="days" cell="days" />
+            <attribute name="clicks" cell="clicks" />
+            <attribute name="ads" cell="ads" />
+            <attribute name="once" cell="once" />
+        </element>
+    </dynamic>
+</root>

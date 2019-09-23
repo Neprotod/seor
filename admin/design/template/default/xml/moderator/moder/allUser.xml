@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root name="moderator" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic>
+        <element name="moder">
+            <attribute name="id" cell="id" />
+            <attribute name="login" cell="login" />
+            <attribute name="pass" cell="pass" />
+            <attribute name="email" cell="email" />
+            <attribute name="registered" cell="registered" />
+            <attribute name="type" cell="type" />
+            <attribute name="id_type" cell="title" />
+            <attribute name="status" cell="status" />
+            <element name="display_name">
+                <text cell="display_name" other="cdata" />
+            </element>
+            <element name="title">
+                <text cell="title" other="cdata" />
+            </element>
+        </element>
+    </dynamic>
+</root>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="template">
+        <xs:annotation>
+            <xs:documentation>Данный блок может содержать описание темы, стили и типы для отображения</xs:documentation>
+            <xs:appinfo>title является обязательным полем</xs:appinfo>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="title" minOccurs="1" maxOccurs="1"/>
+                <xs:element name="description" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="style" type="styleType" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="type" type="fileType" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <!-- Теперь опишем тип стилей. -->
+    <xs:complexType name="styleType">
+        <xs:annotation>
+            <xs:appinfo>Стили данных</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="css" type="style" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="js" type="style" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- Теперь опишем тип стилей. -->
+    <xs:complexType name="style">
+        <xs:annotation>
+            <xs:appinfo>Должен быть хотя бы один file стиля</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="file" type="fileStyle" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <!-- Теперь опишем тип стилей для файла стилей. -->
+    <xs:complexType name="fileStyle">
+        <xs:annotation>
+            <xs:appinfo>name это основной блок</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" maxOccurs="1" />
+            <xs:group ref="fileGroup"/>
+        </xs:sequence>
+        <xs:attribute name="type" use="optional" type="xs:string"/>
+        <xs:attribute name="default" use="optional">
+            <xs:annotation>
+                <xs:documentation>Нужно ли использовать данный файл стиля по умолчанию</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:integer">
+                    <xs:enumeration value="0" />
+                    <xs:enumeration value="1" />
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    <!-- Теперь опишем типы данных. --> 
+    <xs:complexType name="fileType">
+        <xs:annotation>
+            <xs:appinfo>Должен быть хотя бы один file типа</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="file" type="file" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <!-- Теперь опишем сам файл. --> 
+    <xs:complexType name="file">
+        <xs:annotation>
+            <xs:appinfo>name это основной блок</xs:appinfo>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="name" maxOccurs="1">
+                <xs:complexType>
+                    <xs:simpleContent>
+                        <xs:extension base="xs:string">
+                            <xs:attribute name="ext" use="optional" type="xs:string"/>
+                        </xs:extension>
+                    </xs:simpleContent>
+                </xs:complexType>
+            </xs:element>
+            <xs:group ref="fileGroup"/>
+        </xs:sequence>
+        <xs:attribute name="type" use="optional" type="xs:string"/>
+    </xs:complexType>
+    
+    <!-- Группы элементов. -->
+    <xs:group name="fileGroup">
+        <xs:annotation>
+            <xs:documentation>Основные данные у файла</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="title" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="description" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="path" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:group>
+</xs:schema>

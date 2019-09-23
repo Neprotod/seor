@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root name="ads" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="users" one="true">
+        <element name="user">
+            <attribute name="id" cell="id" />
+            <attribute name="employer" cell="employer" />
+            <attribute name="took_days" cell="took_days" />
+            <attribute name="email" cell="email" />
+            <attribute name="id_country" cell="id_country" />
+            <attribute name="name" cell="name" />
+            <attribute name="complete" cell="complete" />
+            <attribute name="birthday" cell="birthday" />
+            <attribute name="id_user_type" cell="id_user_type" />
+            <attribute name="type_description" cell="type_description" />
+            <attribute name="type" cell="type" />
+            <attribute name="legal" cell="legal" />
+        </element>
+    </dynamic>
+    <element name="detail">
+        <dynamic cell="detail">
+            <element name="ads" key="true">
+                <text />
+            </element>
+        </dynamic>
+    </element>
+    <dynamic cell="file">
+        <element name="file">
+            <text />
+        </element>
+    </dynamic>
+</root>

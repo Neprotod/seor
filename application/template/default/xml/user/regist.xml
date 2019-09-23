@@ -1,0 +1,16 @@
+<root name="user" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <attribute name="email" cell="email" />
+    <attribute name="password" cell="password" />
+    <element name="error">
+        <text cell="error"></text>
+    </element>
+    <dynamic cell="type">
+        <element name="type">
+            <attribute name="id" cell="id" />
+            <attribute name="legal" cell="legal" />
+            <attribute name="type" cell="type" />
+            <attribute name="employer" cell="employer" />
+            <text cell="description" other="cdata" />                    
+        </element>
+    </dynamic>
+</root>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root name="customers" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic>
+        <element name="custom">
+            <attribute name="id" cell="id" />
+            <attribute name="name" cell="name" />
+            <attribute name="status" cell="status" />
+            <element name="value">
+                <text cell="value" other="cdata" />
+            </element>
+            <element name="title">
+                <text cell="title" other="cdata" />
+            </element>
+            <element name="description">
+                <text cell="description" other="cdata" />
+            </element>
+        </element>
+    </dynamic>
+</root>

@@ -1,0 +1,83 @@
+<root name="worker" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="user" one="true">
+        <element name="user">
+            <attribute name="id" cell="id" />
+            <attribute name="seor" cell="seor" />
+            <attribute name="days" cell="days" />
+            <attribute name="clicks" cell="clicks" />
+            <attribute name="ads" cell="ads" />
+            <attribute name="message" cell="message" />
+            <attribute name="notification" cell="notification" />
+            <attribute name="employer" cell="employer" />
+            <attribute name="took_days" cell="took_days" />
+            <attribute name="email" cell="email" />
+            <attribute name="logo" cell="logo" />
+            <attribute name="no_logo" cell="no_logo" />
+            <attribute name="logo_path" cell="logo_path" />
+            <attribute name="id_country" cell="id_country" />
+            <attribute name="name" cell="name" />
+            <attribute name="complete" cell="complete" />
+        </element>
+    </dynamic>
+    <dynamic cell="workers">
+        <element name="workers">
+            <attribute name="id_user" cell="id" />
+            <attribute name="email" cell="email" />
+            <attribute name="id_country" cell="id_country" />
+            <attribute name="birthday" cell="birthday" />
+            <attribute name="name" cell="name" />
+            <attribute name="complete" cell="complete" />
+        </element>
+    </dynamic>
+    <dynamic cell="user_specialization">
+        <element name="user_specialization">
+            <attribute name="id_user" cell="id_user" />
+            <attribute name="id_specialization" cell="id_specialization" />
+        </element>
+    </dynamic>
+    <dynamic cell="user_language">
+        <element name="user_language">
+            <attribute name="id_user" cell="id_user" />
+            <attribute name="id_language" cell="id_language" />
+        </element>
+    </dynamic>
+    <dynamic cell="specialization">
+        <element name="specialization">
+            <attribute name="id" cell="id" />
+            <text cell="name" />
+        </element>
+    </dynamic>
+    <dynamic cell="language">
+        <element name="language">
+            <attribute name="id" cell="id" />
+            <text cell="name" />
+        </element>
+    </dynamic>
+    <dynamic cell="country">
+        <element name="country">
+            <attribute name="id" cell="id" />
+            <text cell="name" />
+        </element>
+    </dynamic>
+    <element name="fields">
+        <dynamic cell="fields">
+            <element name="field">
+                <attribute name="id_user" cell="id_user" />
+                <attribute name="id_name" cell="id_name" />
+                <attribute name="name" cell="name" />
+                <text cell="var" other="cdata" />
+            </element>
+        </dynamic>
+    </element>
+    <dynamic cell="get" one="true">
+        <element name="get">
+            <dynamic>
+                <dynamic>
+                    <element name="element" key="last">
+                        <text />
+                    </element>
+                </dynamic>
+            </dynamic>
+        </element>
+    </dynamic>
+</root>

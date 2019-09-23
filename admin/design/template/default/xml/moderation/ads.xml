@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root name="ads" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="ads">
+        <element name="ads">
+            <attribute name="id" cell="id" />
+            <attribute name="id_user" cell="id_user" />
+            <attribute name="title" cell="title" />
+            <attribute name="salary" cell="salary" />
+            <attribute name="time" cell="time" />
+            <attribute name="status" cell="status" />
+            <attribute name="approved" cell="approved" />
+            <attribute name="id_country" cell="id_country" />
+            <attribute name="id_currency" cell="id_currency" />
+            <attribute name="pay" cell="pay" />
+            <attribute name="expiration" cell="expiration" />
+            <attribute name="expiration_time" cell="expiration_time" />
+            <attribute name="seen" cell="seen" />
+            <element name="description">
+                <text cell="description" />
+            </element>
+        </element>
+    </dynamic>
+</root>

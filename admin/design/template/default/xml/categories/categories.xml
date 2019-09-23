@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root name="categories" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic>
+        <element name="category">
+            <attribute name="id" cell="id" />
+            <attribute name="parent_id" cell="parent_id" />
+            <attribute name="date" cell="date" />
+            <attribute name="modified" cell="modified" />
+            <attribute name="url" cell="url" />
+            <attribute name="robots_name" cell="robots_name" />
+            <attribute name="status" cell="status" />
+            <attribute name="static" cell="static" />
+            <attribute name="content_type" cell="content_type" />
+            <attribute name="file_name" cell="file_name" />
+            <attribute name="position" cell="position" />
+            <element name="title">
+                <text cell="title"></text>
+            </element>
+            <element name="meta_title">
+                <text cell="meta_title"></text>
+            </element>
+            <element name="description">
+                <text cell="description"></text>
+            </element>
+        </element>
+    </dynamic>
+</root>

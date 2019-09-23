@@ -1,0 +1,144 @@
+#register_block{
+    margin:0.5em 0;
+}
+#register_block > *{
+    margin-right:16px;
+}
+#register_block > *{
+    margin-right:15px;
+}
+#register_block > *.last{
+    margin-right:0px;
+}
+#register_block a{
+    color:#242b39;
+}
+#register_block .string{
+    font-size:17px;
+}
+#register_block a.btn{
+    color:white;
+    display:inline;
+    background: linear-gradient(to bottom,#fc8c14 0,#f77d0e 100%);
+    border-color: #f77d0e;
+    padding-left:10px;
+    padding-right:10px;
+    position:relative;
+    top:-2px;
+    font-weight:500;
+}
+#register_block a.btn-success:hover {
+  color: #fff;
+  background:none;
+  background: linear-gradient(to bottom,#f77d0e 0,#f77d0e 100%);
+  border-color: #f77d0e;
+}
+
+#register{
+   padding-bottom:20px;
+}
+#register form{
+   height:100%;
+   padding:30px;
+   padding-bottom:0;
+}
+#register .container{
+    max-width:400px;
+    background:white;
+    display:table;
+    padding:0;
+    padding-bottom:10px;
+    box-shadow: 0 0 4px 0 rgba(0,0,0,.08), 0 2px 4px 0 rgba(0,0,0,.12);
+    border-radius: 3px;
+}
+#register_img {
+   padding-bottom:25px;
+}
+
+#register_img .img{
+   margin:auto;
+   display:table;
+}
+#register_and_line {
+    position:relative;
+    margin:10px 0;
+}
+#register_and_line  .horizontal_line{
+    height:1px;
+    width:100%;
+    left:0;
+    right:0;
+    top:50%;
+}
+#register_and_line  span{
+    position:relative;
+    display:table;
+    margin:auto;
+    padding:10px;
+    background:white;
+}
+#register_input .form-group input{
+    height:46px;
+}
+#register .btn{
+   width:100%;
+   padding:10px;
+}
+#register .btn_facebook{
+    background:#3c4d99;
+}
+#register .btn_facebook:hover{
+    background:#344382;
+}
+#register .btn_twitter{
+    background:#00a4f0;
+}
+#register .btn_twitter:hover{
+    background:#008CCB;
+}
+#register .btn_twitter svg{
+    fill:white;
+    height:16px;
+    position:relative;
+    top:2px;
+    margin-left:-24px;
+}
+#register_social > *{
+    margin-top:10px;
+}
+#register_social a.btn{
+    color:white;
+    text-transform:capitalize;
+    font-weight:bold;
+}
+#register_social .string{
+    display:block;
+    text-align:center;
+    font-size:18px;
+    padding-bottom:5px;
+}
+#register_politic{
+    width:100%;
+    padding:15px;
+    padding-top:0px;
+}
+#register_politic .small{
+    font-size:12px;
+}
+#register_politic .big{
+    text-align:center;
+    margin-top:20px;
+    font-weight:bold;
+}
+#register_politic .big a{
+    font-weight:bold;
+}
+#register_politic a:hover{
+    text-decoration:underline;
+}
+#seor_logo_registr{
+    width:142px;  
+    height:131px;
+    background:url(../img/SEOR_logo_14v_142.png);
+    margin:auto;
+}

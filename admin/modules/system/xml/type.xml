@@ -1,0 +1,21 @@
+<root name="types" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic>
+        <element name="type">
+            <attribute name="name" cell="name"/>
+            <attribute name="id" cell="id"/>
+            <attribute name="status" cell="status" default="0" />
+            <attribute name="type" cell="type" default="general" />
+            <attribute name="ext" cell="ext" />
+            <attribute name="no_exist" cell="no_exist" default="0" />
+            <element name="title">
+                <text cell="title" other="cdata" />
+            </element>
+            <element name="description">
+                <text cell="description" other="cdata" />
+            </element>
+            <element name="path">
+                <text cell="path" />
+            </element>
+        </element>
+    </dynamic>
+</root>

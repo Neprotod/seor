@@ -1,0 +1,16 @@
+<root name="note" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic>
+        <element name="notification">
+            <attribute name="id" cell="id" />
+            <attribute name="time" cell="time" />
+            <attribute name="seen" cell="seen" />
+            <attribute name="type" cell="type" />
+            <element name="title">
+                <text cell="title" other="cdata" />
+            </element>
+            <element name="content">
+                <text cell="content" other="cdata" />
+            </element>
+        </element>
+    </dynamic>
+</root>

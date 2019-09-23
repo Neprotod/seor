@@ -1,0 +1,18 @@
+<root name="users" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="price">
+        <element name="price">
+            <attribute name="id" cell="id" />
+            <attribute name="title" cell="title" />
+            <attribute name="amount" cell="amount" />
+            <attribute name="clicks" cell="clicks" />
+            <attribute name="adc" cell="adc" />
+        </element>
+    </dynamic>
+    <dynamic cell="currency">
+        <element name="currency">
+            <attribute name="id" cell="id" />
+            <attribute name="rate" cell="rate" />
+            <attribute name="name" cell="name" />
+        </element>
+    </dynamic>
+</root>

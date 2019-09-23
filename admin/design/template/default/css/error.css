@@ -1,0 +1,34 @@
+#error_message{
+    display:table;
+    max-width:500px;
+}
+#error_message .alert_box{
+    position:relative;
+}
+#error_message .alert{
+    position:relative;
+    padding-right:30px;
+}
+#error_message .close{
+    position:absolute;
+    right:10px;
+    top:50%;
+    margin-top:-0.55em;
+}
+input.warning,select.warning{
+   border-color:orange;
+}
+input.danger,select.danger{
+   border-color:red;
+}
+
+.help_block{
+    font-size:12px;
+    padding-left:10px;
+}
+.help_block.danger{
+    color:red;
+}
+.help_block.warning{
+    color:orange;
+}

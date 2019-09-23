@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root name="pages" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <element name="page">
+        <attribute name="id" cell="id" />
+        <attribute name="login" cell="login" />
+        <attribute name="id_admin_user" cell="id_admin_user" />
+        <attribute name="date" cell="date" />
+        <attribute name="modified" cell="modified" not="true" />
+        <attribute name="url" cell="url" />
+        <attribute name="url_name" cell="url_name" />
+        <attribute name="url_parent" cell="url_parent" not="true" />
+        <attribute name="id_url" cell="id_url" />
+        <attribute name="robots" cell="robots" />
+        <attribute name="robots_name" cell="robots_name" />
+        <attribute name="status" cell="status" />
+        <attribute name="id_category" cell="id_category" />
+        <attribute name="content_type" cell="content_type" />
+        <attribute name="file_name" cell="file_name" />
+        <attribute name="exp" cell="exp" />
+        <attribute name="position" cell="position" />
+        <attribute name="id_type" cell="id_type" />
+        <attribute name="type" cell="type" />
+        <element name="title">
+            <text cell="title" other="cdata"></text>
+        </element>
+        <element name="meta_title">
+            <text cell="meta_title" other="cdata"></text>
+        </element>
+        <element name="description">
+            <text cell="description" other="cdata"></text>
+        </element>
+        <element name="content">
+            <text cell="content" other="cdata"></text>
+        </element>
+        <dynamic cell="fields">
+            <element name="fields">
+                <element name="field">
+                    <attribute name="id" cell="id" />
+                    <attribute name="name" cell="name" />
+                    <attribute name="var" cell="var" />
+                    <dynamic cell="children">
+                        <element name="children">
+                            <dynamic>
+                                <element name="child">
+                                    <text />
+                                </element>
+                            </dynamic>
+                        </element>
+                    </dynamic>
+                </element>
+            </element>
+        </dynamic>
+        <dynamic cell="parent_fields">
+            <element name="parent_fields">
+                 <element name="field">
+                    <attribute name="id" cell="id" />
+                    <attribute name="name" cell="name" />
+                    <attribute name="var" cell="var" />
+                </element>
+            </element>
+        </dynamic>
+        <dynamic cell="content_type_arr">
+            <element name="content_type">
+                <attribute name="id" cell="id" />
+                <attribute name="type" cell="type" />
+                <attribute name="name" cell="name" />
+                <attribute name="exp" cell="exp" />
+                <attribute name="title" cell="title" />
+                <attribute name="description" cell="description" />
+                <attribute name="path" cell="path" />
+                <attribute name="class" cell="class" />
+            </element>
+        </dynamic>
+        <dynamic cell="category" one="true">
+            <element name="category">
+                <attribute name="id" cell="id" />
+                <attribute name="url" cell="url" />
+                 <element name="title">
+                    <text cell="title" other="cdata"></text>
+                </element>
+            </element>
+        </dynamic>
+    </element>
+</root>

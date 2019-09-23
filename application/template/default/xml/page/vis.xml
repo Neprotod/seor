@@ -1,0 +1,27 @@
+<root name="page" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="page" one="true">
+        <attribute name="title" cell="title" />
+        <element name="content">
+            <text cell="content" other="cdata" />
+        </element>
+    </dynamic>
+    <dynamic cell="fields">
+        <element name="test" key="true">
+            <text cell="var" />
+        </element>
+    </dynamic>
+    <dynamic cell="field">
+        <element name="field">
+            <text />
+        </element>
+    </dynamic>
+    <dynamic cell="params">
+        <element name="params">
+            <dynamic>
+                <element name="param">
+                    <text />
+                </element>
+            </dynamic>
+        </element>
+    </dynamic>
+</root>

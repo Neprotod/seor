@@ -1,0 +1,37 @@
+<root name="pay" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="user" one="true">
+        <element name="user">
+            <attribute name="id" cell="id" />
+            <attribute name="seor" cell="seor" />
+            <attribute name="days" cell="days" />
+            <attribute name="clicks" cell="clicks" />
+            <attribute name="ads" cell="ads" />
+            <attribute name="message" cell="message" />
+            <attribute name="notification" cell="notification" />
+            <attribute name="employer" cell="employer" />
+            <attribute name="took_days" cell="took_days" />
+            <attribute name="email" cell="email" />
+            <attribute name="logo" cell="logo" />
+            <attribute name="no_logo" cell="no_logo" />
+            <attribute name="logo_path" cell="logo_path" />
+            <attribute name="id_country" cell="id_country" />
+            <attribute name="name" cell="name" />
+            <attribute name="complete" cell="complete" />
+            <attribute name="all_year" cell="all_year" />
+            <attribute name="birthday" cell="birthday" />
+            <attribute name="new_email" cell="new_email" />
+            <attribute name="password" cell="password" />
+            <attribute name="new_password" cell="new_password" />
+            <attribute name="repeat_password" cell="repeat_password" />
+        </element>
+    </dynamic>
+    <dynamic cell="dop" one="true">
+        <element name="dop">
+            <attribute name="type" cell="type" />
+            <attribute name="title" cell="title" />
+            <element name="message">
+                <text cell="message" />
+            </element>
+        </element>
+    </dynamic>
+</root>

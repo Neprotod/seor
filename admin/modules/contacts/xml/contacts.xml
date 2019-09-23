@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts new="">
+    
+    <appeal title="Testing" new="developer" type="error" date="03.08.2015 1.15" id="2">
+
+        <message for="client" date="1438564748" num="1">
+            <![CDATA[]]>
+        </message>
+        <message for="developer" date="1438564753" num="2">
+            <![CDATA[text]]>
+        </message>
+        <message for="client" date="1438564945" num="3">
+            <![CDATA[t]]>
+        </message>
+        <message for="developer" date="1438565100" num="4">
+            <![CDATA[s]]>
+        </message>
+    <message for="client" date="1438641963" num="5"><![CDATA[test]]></message><message for="developer" date="1438641991" num="6"><![CDATA[test]]></message></appeal>
+    <appeal title="test" new="" type="error" date="1438566165" id="3">
+        <message for="client" date="1438566165" num="1">
+            <![CDATA[test]]>
+        </message>
+        <message for="client" date="1438566296" num="2">
+            <![CDATA[test]]>
+        </message>
+    <message for="developer" date="1438640564" num="3"><![CDATA[test]]></message><message for="client" date="1438640585" num="4"><![CDATA[test]]></message></appeal></contacts>

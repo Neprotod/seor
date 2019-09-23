@@ -1,0 +1,31 @@
+<root name="styles" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic sort="default">
+        <element name="box">
+            <attribute name="default" key="key" />
+            <dynamic sort="style_type">
+                <!--<element name="type" key="key">-->
+                    <dynamic>
+                        <element name="style">
+                            <attribute name="name" cell="name"/>
+                            <attribute name="id" cell="id"/>
+                            <attribute name="id_template" cell="id_template"/>
+                            <attribute name="status" cell="status" replace="default" />
+                            <attribute name="style_type" cell="style_type" />
+                            <attribute name="type" cell="type" default="general" />
+                            <attribute name="default" cell="default" default="0" />
+                            <element name="title">
+                                <text cell="title" other="cdata" />
+                            </element>
+                            <element name="description">
+                                <text cell="description" other="cdata" />
+                            </element>
+                            <element name="path">
+                                <text cell="path" />
+                            </element>
+                        </element>
+                    </dynamic>
+                <!--</element>-->
+            </dynamic>
+        </element>
+    </dynamic>
+</root>

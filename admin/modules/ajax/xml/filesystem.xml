@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root name="filemanager" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="breadcrumb">
+        <element name="breadcrumb">
+            <attribute name="name" cell="name" />
+            <attribute name="url" cell="url" not="true" />
+        </element>
+    </dynamic>
+    <dynamic cell="directories">
+        <element name="dir">
+            <attribute name="name" cell="name" />
+            <attribute name="dir" cell="dir" />
+        </element>
+    </dynamic>
+    <dynamic cell="files">
+        <element name="file">
+            <attribute name="name" cell="name" />
+            <attribute name="file" cell="file" />
+            <attribute name="size" cell="size" />
+            <attribute name="exp" cell="exp" />
+        </element>
+    </dynamic>
+</root>

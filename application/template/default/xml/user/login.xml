@@ -1,0 +1,7 @@
+<root name="user" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <attribute name="email" cell="email" />
+    <attribute name="password" cell="password" />
+    <element name="error">
+        <text cell="error"></text>
+    </element>
+</root>

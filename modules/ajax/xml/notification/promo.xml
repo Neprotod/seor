@@ -1,0 +1,11 @@
+<root name="note" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <attribute name="id" cell="id" />
+    <attribute name="time" cell="time" />
+    <attribute name="promo" cell="promo" />
+    <attribute name="seor" cell="seor" />
+    <attribute name="days" cell="days" />
+    <attribute name="clicks" cell="clicks" />
+    <attribute name="ads" cell="ads" />
+    <attribute name="error" cell="error" />
+    <attribute name="employer" cell="employer" />
+</root>

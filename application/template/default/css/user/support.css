@@ -1,0 +1,92 @@
+#support .appeal.btn{
+    /*margin-left:auto;*/
+}
+#support .no_appeal{
+    padding:30px;
+    font-size:18px;
+    text-align:center;
+    color:#ccc;
+}
+#support .container{
+    max-width:600px;
+}
+#support .logo_box img{
+    width:50px;
+}
+#support .logo_box .overflow{
+    border-radius:50%;
+    width:auto;
+    height:auto;
+    background:#fff;
+    border:1px solid #ccc;
+}
+#support .user_name{
+    color:#666;
+}
+#support .container.appeal{
+    max-width:600px;
+}
+
+#support .container.read{
+    max-width:600px;
+}
+#support .container.read .card-body .appeal{
+    padding:20px 20px;
+}
+#support .container .card-body .margin{
+    margin:20px;
+}
+
+
+#support .card-body{
+    padding:0;
+}
+#support .card-body .appeal{
+    border-bottom:1px solid #ddd;
+    padding:10px 20px;
+    color:inherit;
+}
+
+#support .card-body .appeal.admin{
+    border-bottom:1px solid #ddd;
+    padding:10px 20px;
+    color:inherit;
+    background:#F5F5F5;
+}
+
+#support .card-body .appeal:hover{
+    background:#F5F5F5;
+}
+#support .card-body .appeal.last{
+    border-bottom:none;
+}
+#support .card-body .appeal.new {
+    border:1px solid #28a74580;
+}
+
+#support .card-body .title{
+}
+#support .card-body .tiket{
+    font-size:0.8em;
+    color:#007adf;
+}
+#support .card-body .time_box{
+    font-size:0.7em;
+    color:#ccc;
+}
+
+
+
+
+/*МЕДИА*/
+@media (max-width: 380px) {
+    #support .card-header{
+       font-size: 0.9rem; 
+    }
+    #support .user_button{
+       font-size: 0.8rem; 
+    }
+    #support .appeal {
+       font-size: 0.8rem; 
+    }
+}

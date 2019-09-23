@@ -1,0 +1,8 @@
+<root name="page" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic cell="page" one="true">
+        <attribute name="title" cell="title" />
+        <element name="content">
+            <text cell="content" other="cdata" />
+        </element>
+    </dynamic>
+</root>

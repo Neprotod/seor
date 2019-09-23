@@ -1,0 +1,208 @@
+# Generated pot
+# Translators:
+# Translators:
+# Translators:
+# Translators:
+# andruha.ms <andruha.ms@gmail.com>, 2013
+# NDS <dimonest@gmail.com>, 2017
+# Ilya Pribylsky <indiego.mttt@gmail.com>, 2018
+# Алексей Выскубов <viskubov@gmail.com>, 2013-2014
+# Евгений Дождиков <edojdikov@krug-shar.ru>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: TinyMCE\n"
+"Report-Msgid-Bugs-To: http://moxiecode.com\n"
+"POT-Creation-Date: 2013-03-21 16:18:52+00:00\n"
+"PO-Revision-Date: 2018-06-04 09:55+0000\n"
+"Last-Translator: Joakim Lindkvist\n"
+"Language-Team: Russian (http://www.transifex.com/moxiecode/tinymce/language/ru/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"\"#: i18n:\n"
+"Language: ru\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+msgid "Redo"
+msgstr "Отменить"
+
+msgid "Undo"
+msgstr "Вернуть"
+
+msgid "Cut"
+msgstr "Вырезать"
+
+msgid "Copy"
+msgstr "Копировать"
+
+msgid "Paste"
+msgstr "Вставить"
+
+msgid "Select all"
+msgstr "Выделить все"
+
+msgid "New document"
+msgstr "Новый документ"
+
+msgid "Ok"
+msgstr "Ок"
+
+msgid "Cancel"
+msgstr "Отменить"
+
+msgid "Visual aids"
+msgstr "Показывать контуры"
+
+msgid "Bold"
+msgstr "Полужирный"
+
+msgid "Italic"
+msgstr "Курсив"
+
+msgid "Underline"
+msgstr "Подчеркнутый"
+
+msgid "Strikethrough"
+msgstr "Зачеркнутый"
+
+msgid "Superscript"
+msgstr "Верхний индекс"
+
+msgid "Subscript"
+msgstr "Нижний индекс"
+
+msgid "Clear formatting"
+msgstr "Очистить формат"
+
+msgid "Align left"
+msgstr "По левому краю"
+
+msgid "Align center"
+msgstr "По центру"
+
+msgid "Align right"
+msgstr "По правому краю"
+
+msgid "Justify"
+msgstr "По ширине"
+
+msgid "Bullet list"
+msgstr "Маркированный список"
+
+msgid "Numbered list"
+msgstr "Нумерованный список"
+
+msgid "Decrease indent"
+msgstr "Уменьшить отступ"
+
+msgid "Increase indent"
+msgstr "Увеличить отступ"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "Formats"
+msgstr "Формат"
+
+msgid ""
+"Your browser doesn't support direct access to the clipboard. Please use the "
+"Ctrl+X/C/V keyboard shortcuts instead."
+msgstr "Ваш браузер не поддерживает прямой доступ к буферу обмена. Пожалуйста, используйте следующие сочетания клавиш: Ctrl+X/C/V."
+
+msgid "Headers"
+msgstr "Заголовки"
+
+msgid "Header 1"
+msgstr "Заголовок 1"
+
+msgid "Header 2"
+msgstr "Заголовок 2"
+
+msgid "Header 3"
+msgstr "Заголовок 3"
+
+msgid "Header 4"
+msgstr "Заголовок 4"
+
+msgid "Header 5"
+msgstr "Заголовок 5"
+
+msgid "Header 6"
+msgstr "Заголовок 6"
+
+msgid "Headings"
+msgstr "Заголовки"
+
+msgid "Heading 1"
+msgstr "Заголовок 1"
+
+msgid "Heading 2"
+msgstr "Заголовок 2"
+
+msgid "Heading 3"
+msgstr "Заголовок 3"
+
+msgid "Heading 4"
+msgstr "Заголовок 4"
+
+msgid "Heading 5"
+msgstr "Заголовок 5"
+
+msgid "Heading 6"
+msgstr "Заголовок 6"
+
+msgid "Preformatted"
+msgstr "Предварительное форматирование"
+
+msgid "Div"
+msgstr "Блок"
+
+msgid "Pre"
+msgstr "Предварительное форматирование"
+
+msgid "Code"
+msgstr "Код"
+
+msgid "Paragraph"
+msgstr "Параграф"
+
+msgid "Blockquote"
+msgstr "Цитата"
+
+msgid "Inline"
+msgstr "Строчные"
+
+msgid "Blocks"
+msgstr "Блоки"
+
+msgid ""
+"Paste is now in plain text mode. Contents will now be pasted as plain text "
+"until you toggle this option off."
+msgstr "Вставка осуществляется в виде простого текста, пока не отключить данную опцию."
+
+msgid "Font Family"
+msgstr "Шрифт"
+
+msgid "Font Sizes"
+msgstr "Размер шрифта"
+
+msgid "Class"
+msgstr "Класс"
+
+msgid "Browse for an image"
+msgstr "Выбор изображения"
+
+msgid "OR"
+msgstr "ИЛИ"
+
+msgid "Drop an image here"
+msgstr "Перетащите изображение сюда"
+
+msgid "Upload"
+msgstr "Загрузить"
+
+msgid "Block"
+msgstr "Блок"
+
+msgid "Align"
+msgstr "Выравнивание"

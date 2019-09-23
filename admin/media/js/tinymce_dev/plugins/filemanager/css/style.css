@@ -1,0 +1,451 @@
+*, *:after, *:before { 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box; 
+}
+body, html {
+    font-family: 'Open Sans',sans-serif;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #ECECEC;
+    font-weight: 200;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding-top: 32px;
+    color: #333333;
+    line-height: 20px;
+}
+
+.container-fluid {
+    padding-right:0 10px !important;
+    margin-top:10px !important;
+}
+ 
+
+.img-precontainer {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    background: white;
+    border: none;
+}
+ 
+.img-container {
+    height: 91px;
+    width: 122px;
+    padding: 0px;
+    border: none;
+    overflow: hidden;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    margin: auto;
+}
+ 
+ul.breadcrumb {
+    margin-bottom: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+
+.img-container * {
+    vertical-align: middle
+}
+
+.img-container.directory {
+    background-color: #dddddd
+}
+
+iframe {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.qq-uploader .span9 {
+    margin-left: 14px !important;
+    width: 690px !important;
+}
+
+.space10 {
+    clear: both;
+    height: 10px;
+}
+
+h4 {
+    font-size: 11px;
+    font-weight: normal;
+    margin: 0px;
+    text-align: center;
+    padding: 0px;
+    margin-top: 6px;
+    line-height: 18px;
+}
+
+h3 { font-size: 14px }
+
+.boxes {
+    border: 1px solid #CCCCCC;
+    word-wrap: break-word;
+    background: white;
+    -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.2);
+    min-height: 115px;
+    text-align: center;
+}
+
+.container-fluid { padding: 0px 10px !important }
+
+.preview {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.filters {
+    margin-top: 0px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.filters .pull-right { text-align: right }
+
+.filters .btn { margin-bottom: 4px }
+
+.uploader {
+    position: absolute;
+    top: 100px;
+    margin: auto;
+    width: 100%;
+    z-index: 9999;
+    background: #eeeeee;
+    padding-top: 20px;
+    border-bottom: 1px solid #cccccc;
+    display: none;
+}
+
+.download-form { margin-bottom: 25px }
+
+.grid li i {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.box, .boxx {
+    text-align: center;
+    word-wrap: break-word;
+    background: white;
+    vertical-align: top;
+    text-align: left;
+    position: relative;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    box-shadow: none;
+    min-height: 30px;
+    z-index: 100;
+    padding: 4px;
+}
+
+.box .btn {
+    width: 100%;
+    background: none;
+    box-shadow: none;
+    border: none;
+    z-index: 200;
+}
+
+/* GRID */
+
+.grid {
+    padding: 10px;
+    margin: 0 auto;
+    list-style: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.grid li {
+    display: inline-block;
+    width: 128px;
+    margin: 5px;
+    padding: 2px;
+    vertical-align: top;
+}
+
+.grid figure {
+    margin: 0;
+    position: relative;
+    display: block;
+    width: 122px;
+    margin: auto;
+}
+
+.grid figure .box {
+    max-width: 100%;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.grid h4 {
+    font-family: Helvetica;
+    text-align: center;
+    color: black;
+    padding: 0px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+/* Individual Caption Styles */
+
+/* Caption Style 2 */
+
+.cs-style-2 figure .box {
+    z-index: 10;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+}
+
+.no-touch .cs-style-2 figure:hover .box, .cs-style-2 figure.cs-hover .box {
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(1, 1, 1, 0.5);
+    box-shadow: 0px 0px 4px 0px rgba(1, 1, 1, 0.5);
+    -webkit-transform: translateY(-26px);
+    -moz-transform: translateY(-26px);
+    -ms-transform: translateY(-26px);
+    transform: translateY(-26px);
+}
+
+.grid figure.back-directory .directory {
+    background: none repeat scroll 0 0 #BBBBBB;
+}
+
+.grid figure.cs-hover .box.no-effect, .grid figure:hover .box.no-effect, .no-effect {
+    box-shadow: none;
+    transform: none;
+}
+
+.grid .img-precontainer .filetype {
+    color: #FFFFFF;
+    font-size: 13px;
+    line-height: 22px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    background:rgba(0,0,0,0.3);
+}
+
+.img-container img {
+    max-height: 91px;
+    max-width: 122px;
+}
+
+
+a, a:hover {
+    color: #000000;
+    text-decoration: none;
+}
+
+.grid figure[cover="yes"] .cover {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25) 0px, rgba(255, 255, 255, 0.25) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    height: 69px;
+    position: absolute;
+    right: 0;
+    top: 22px;
+    width: 122px;
+}
+.grid figure[cover="yes"] .filetype {
+   background:none !important;
+}
+.grid li.file{
+    cursor:pointer;
+}
+
+/*Верхняя панель*/
+
+.row-fluid:after, .row-fluid:before {
+    content: "";
+    display: table;
+    line-height: 0;
+}
+.row-fluid:after {
+    clear: both;
+}
+
+ul.breadcrumb {
+    background: none repeat scroll 0 0 #F0F0F0;
+    border-bottom: 1px solid #BBBBBB;
+    border-radius: 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.067);
+    margin-bottom: 5px;
+    padding:6px 8px 6px 15px;
+    color: #a8a8a8;
+}
+
+.breadcrumb  li {
+    display: inline-block;
+    text-shadow: 0 1px 0 #FFFFFF;
+}
+
+ul.breadcrumb .pull-left i {
+    margin-top: 2px;
+}
+
+
+small {
+    font-size: 85%;
+    color:#333;
+}
+
+/*Элементы управления*/
+.grid figcaption {
+    background: #FFFFFF;
+}
+
+.grid figcaption {
+    bottom: 0;
+    box-shadow: 0 0 8px 0 rgba(41, 41, 41, 0.5) inset;
+    color: #FFFFFF;
+    height: 30px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 8px 2px 2px;
+    position: absolute;
+    text-align: center;
+    top: auto;
+    width: 122px;
+    cursor:default;
+}
+
+.grid figcaption a {
+    margin: 0px;
+    padding: 4px;
+}
+
+.grid figcaption h3 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+
+
+/*lightbox*/
+.lightbox{
+    z-index:2000;
+}
+.lightbox-content{
+    -webkit-box-sizing: content-box; 
+    -moz-box-sizing: content-box; 
+    box-sizing: content-box; 
+}
+.modal-backdrop, .modal-backdrop.fade.in {
+    opacity: 0.5;
+}
+
+
+/*обрезка текста*/
+.breadcrumb li{
+    height:23px;
+}
+h4.ellipsis {
+    height: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+ /*обрезка у хлебных крошек*/
+li.ellipsis{
+   max-width:180px;
+   overflow:hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   color: #000000;
+}
+
+/*Иконки*/
+[class*=" icon-"], [class^="icon-"] {
+    background-image: url("../img/glyphicons-halflings.png");
+    background-position: 14px 14px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 14px;
+}
+.icon-home {
+    background-position: 0 -24px !important;
+}
+.icon-refresh {
+    background-position: -240px -24px;
+}
+.icon-eye-open {
+    background-position: -96px -120px;
+}
+.icon-pencil {
+    background-position: 0 -72px;
+}
+/*Для расширений*/
+.grid .img-precontainer .filetype.pdf{
+    background: none repeat scroll 0 0 #CB0011;
+}
+.grid .img-precontainer .filetype.ai{
+    background: none repeat scroll 0 0 #D6772F;
+}
+.grid .img-precontainer .filetype.psd{
+    background: none repeat scroll 0 0 #0960A4;
+}
+.grid .img-precontainer .filetype.html, .grid .img-precontainer .filetype.xhtml {
+    background: none repeat scroll 0 0 #035BC4;
+}
+.grid .img-precontainer .filetype.fla, .grid .img-precontainer .filetype.flv{
+    background: none repeat scroll 0 0 #CF302E;
+}
+.grid .img-precontainer .filetype.ppt, .grid .img-precontainer .filetype.pptx{
+    background: none repeat scroll 0 0 #DA5B00;
+}
+.grid .img-precontainer .filetype.css, .grid .img-precontainer .filetype.xls, .grid .img-precontainer .filetype.xlsx{
+    background: none repeat scroll 0 0 #1A712C;
+}
+.grid .img-precontainer .filetype.doc, .grid .img-precontainer .filetype.docx, .grid .img-precontainer .filetype.rts {
+    background: none repeat scroll 0 0 #002093;
+}
+.grid .img-precontainer .filetype.gzip, .grid .img-precontainer .filetype.rar, .grid .img-precontainer .filetype.zip, .list-view2.grid .img-precontainer-mini .filetype.gzip, .list-view2.grid .img-precontainer-mini .filetype.rar, .list-view2.grid .img-precontainer-mini .filetype.zip {
+    background: none repeat scroll 0 0 #FE9221;
+}
+.grid .img-precontainer .filetype.avi, .grid .img-precontainer .filetype.mov, .grid .img-precontainer .filetype.mp4, .grid .img-precontainer .filetype.mpeg, .grid .img-precontainer .filetype.mpg, .grid .img-precontainer .filetype.webm, .grid .img-precontainer .filetype.wma {
+    background: none repeat scroll 0 0 #31231E;
+}
+.grid .img-precontainer .filetype.ac3, .grid .img-precontainer .filetype.aiff, .grid .img-precontainer .filetype.m4a, .grid .img-precontainer .filetype.mid, .grid .img-precontainer .filetype.mp3, .grid .img-precontainer .filetype.ogg, .grid .img-precontainer .filetype.wav{
+    background: none repeat scroll 0 0 #9F008B;
+}
+.grid .img-precontainer .filetype.odb, .grid .img-precontainer .filetype.odf, .grid .img-precontainer .filetype.odg, .grid .img-precontainer .filetype.odp, .grid .img-precontainer .filetype.ods, .grid .img-precontainer .filetype.odt, .grid .img-precontainer .filetype.otg, .grid .img-precontainer .filetype.otp, .grid .img-precontainer .filetype.ots, .grid .img-precontainer .filetype.ott{
+    background: none repeat scroll 0 0 #367BBE;
+}
+.grid .img-precontainer .filetype.bmp, .grid .img-precontainer .filetype.gif, .grid .img-precontainer .filetype.jpeg, .grid .img-precontainer .filetype.jpg, .grid .img-precontainer .filetype.png, .grid .img-precontainer .filetype.svg, .grid .img-precontainer .filetype.tiff{
+    background: none repeat scroll 0 0 #CFA554;
+}
+.grid .img-precontainer .filetype.dmg, .grid .img-precontainer .filetype.iso, .grid .img-precontainer .filetype.log, .grid .img-precontainer .filetype.sql, .grid .img-precontainer .filetype.txt, .grid .img-precontainer .filetype.xml{
+    background: none repeat scroll 0 0 #CACACA;
+}
+.grid .img-precontainer .filetype.accdb, .grid .img-precontainer .filetype.ade, .grid .img-precontainer .filetype.adp, .grid .img-precontainer .filetype.mdb{
+    background: none repeat scroll 0 0 #B61C19;
+}
+
+
+
+/*RESET*//*
+.breadcrumb>li+li:before{
+    padding:0 !important;
+    color:#ccc;
+    content:""!important;
+}*/
+.in{
+    display:block !important;
+}

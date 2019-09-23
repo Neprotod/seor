@@ -1,0 +1,42 @@
+/*Обращение пользователей*/
+.contacts .appeal .app{
+    text-decoration:none;
+}
+.contacts #appeal .cell{
+    vertical-align:middle;
+    border-bottom:1px solid !important;
+    padding:1em 0;
+}
+.contacts .appeal .new_message{
+    width:32px;
+    height:32px;
+    background:url(../img/email.png) no-repeat;
+    margin-left:10px;
+}
+.contacts_app h2{
+    font-size:1.5em;
+}
+.contacts_app h2 input{
+    font-size:inherit;
+}
+.contacts_app .cell.small{
+    padding-right:1em;
+}
+.contacts_app input[name="title"]{
+    width:100%;
+}
+
+.contacts_app textarea[name="message"], .contacts_get textarea[name="message"]{
+    height:10em;
+}
+
+.contacts_get .post{
+    display:table;
+}
+.contacts_get .developer{
+    margin-left:80px;
+}
+
+.contacts_get .cell{
+    max-width:300px;
+}

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="root">
+        <xs:annotation>
+            <xs:documentation>Основной блок</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="allElement">
+                    <xs:attribute name="name" use="required" type="xs:string"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="attribute">
+        <xs:annotation>
+            <xs:documentation>
+                Атрибуты элементов 
+                    name     - имя атрибута,
+                    key      - использовать ключ массива в качестве значения
+                    cell     - использовать ячейку массива в качестве значения
+                    default - значение по умолчанию
+                    replace - ячейка массива, на которое можно поменять в случае 
+                              отсутствия значения в cell
+                    not      - не устанавливать атрибут, если не найдено значение в массиве
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="name" use="required" />
+            <xs:attribute name="key"  use="optional" />
+            <xs:attribute name="cell" use="optional" />
+            <xs:attribute name="default" use="optional" />
+            <xs:attribute name="replace" use="optional" />
+            <xs:attribute name="not" use="optional" >
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="true"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="text">
+        <xs:annotation>
+            <xs:documentation>
+                cell    - использовать ячейку массива в качестве значения
+                other   - дополнительные значения, cdata заносить содержимое в CDATA блок
+                default - текст по умолчанию если пустое значение.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="cell" use="optional" />
+            <xs:attribute name="default" use="optional" />
+            <xs:attribute name="other" use="optional" >
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="cdata"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="element">
+        <xs:annotation>
+            <xs:documentation>
+                rename - ячейка массива, для переименования элемента
+                key       - в данном случае ключ массива, будет именем элемента
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="allElement">
+                    <xs:attribute name="name" use="required" />
+                    <xs:attribute name="key"  use="optional" />
+                    <xs:attribute name="cell" use="optional" />
+                    <xs:attribute name="rename" use="optional" />
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    
+
+    <xs:element name="dynamic">
+        <xs:annotation>
+            <xs:documentation>
+                sort         - сортирует массив по ячейкам, получая многомерный массив
+                sort_value    - сортирует массив по ячейке, не изменяя его структуры
+                revers        - переворачивает массив (после сортировки)
+                one            - не запускать рекурсию, передать массив таким, какой он есть
+                cell        - обычно используется, для ограничения массива 
+                              Пример: '*::id' - создать массив, из любых элементов,
+                              со значением id
+                extract        - сливает с определенным массивом
+                              last  - предыдущий используемых массив
+                reset_array - обнуляет массив в двух режимах
+                              reset - полностью
+                              last  - предыдущий используемых массив
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="allElement">
+                    <xs:attribute name="sort" use="optional" />
+                    <xs:attribute name="name" use="optional" />
+                    <xs:attribute name="sort_value" use="optional" />
+                    <xs:attribute name="revers" use="optional" />
+                    <xs:attribute name="cell" use="optional" />
+                    <xs:attribute name="one" use="optional" >
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="true"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="extract" use="optional" >
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="last"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="reset_array" use="optional" >
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="reset"/>
+                                <xs:enumeration value="last"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    
+    
+
+    <xs:complexType name="allElement">
+        <xs:annotation>
+            <xs:documentation>
+                attribute - атрибут элемента.
+                dynamic   - динамический блок, включает foreach для массива
+                element   - элемент
+                text      - тестовый блок.
+            </xs:documentation>
+        </xs:annotation>
+        <!-- При такой записи, можно выбирать лубую последовательность -->
+        <xs:choice minOccurs="0">
+            <xs:sequence>
+                <xs:element ref="attribute" minOccurs="0" maxOccurs="unbounded" />
+                <xs:sequence maxOccurs="unbounded">
+                    <xs:element ref="dynamic" minOccurs="0" />
+                    <xs:element ref="element" minOccurs="0" />
+                    <xs:element ref="text" minOccurs="0" />
+                </xs:sequence>
+            </xs:sequence>
+        </xs:choice>
+    </xs:complexType>
+</xs:schema>

@@ -1,0 +1,8 @@
+<contacts>
+    <appeal title="Обращение" id="0" new="client|developer" date="">
+        <message type="client" num="1" date="">
+        </message>
+        <message type="developer" num="2" date="">
+        </message>
+    </appeal>
+</contacts>

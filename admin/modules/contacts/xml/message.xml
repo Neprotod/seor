@@ -1,0 +1,6 @@
+<root name="message">
+    <attribute name="for" cell="for" />
+    <attribute name="date" cell="date" />
+    <attribute name="num" cell="num" />
+    <text other="cdata" cell="message" />
+</root>

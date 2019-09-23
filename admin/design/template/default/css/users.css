@@ -1,0 +1,9 @@
+.user td{
+    padding:15px;
+    position:relative;
+}
+.user td .type{
+    position:absolute;
+    top:0px;
+    font-size:12px;
+}

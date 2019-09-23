@@ -1,0 +1,5 @@
+<root name="user" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <element name="error">
+        <text cell="error"></text>
+    </element>
+</root>

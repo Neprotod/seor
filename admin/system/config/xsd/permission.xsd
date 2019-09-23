@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="module">
+        <xs:annotation>
+            <xs:documentation>Основной блок</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="methods" minOccurs="0" />
+                <xs:element ref="controllers" minOccurs="0" />
+                <xs:element ref="models" minOccurs="0" />
+            </xs:sequence>
+            <xs:attribute name="name" use="optional" type="xs:string"/>
+            <xs:attribute name="description" use="optional" type="xs:string"/>
+        </xs:complexType>
+        <xs:unique name="uqMethos">
+            <xs:annotation>
+                <xs:documentation>Уникальный среди корневых методов</xs:documentation>
+            </xs:annotation>
+            <xs:selector xpath="methods/method"/>
+            <xs:field xpath="@name"/>
+        </xs:unique>
+    </xs:element>
+    
+    <xs:element name="methods" type="methodInside">
+        <xs:annotation>
+            <xs:documentation>Методы модуля</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+    
+    <xs:element name="controllers">
+        <xs:annotation>
+            <xs:documentation>Контроллеры модуля</xs:documentation>
+        </xs:annotation>
+         <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="classes" minOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="models">
+        <xs:annotation>
+            <xs:documentation>Модели модуля</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence maxOccurs="unbounded">
+                <xs:element ref="classes" minOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="classes">
+        <xs:annotation>
+            <xs:documentation>Класс модели или контроллера</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="methodInside">
+                    <xs:attributeGroup ref="attrNameDesc"/>
+                </xs:extension>
+            </xs:complexContent>
+            
+        </xs:complexType>
+        <xs:unique name="uqMethodClass">
+            <xs:annotation>
+                <xs:documentation>Уникальный внутри модели</xs:documentation>
+            </xs:annotation>
+            <xs:selector xpath="method"/>
+            <xs:field xpath="@name"/>
+        </xs:unique>
+    </xs:element>
+    
+    <xs:element name="permission">
+        <xs:annotation>
+            <xs:documentation>Блок расширения для rule</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                <xs:element ref="rule" minOccurs="0" maxOccurs="unbounded"  />
+                <xs:element ref="sql"  minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="uqRoleSql">
+            <xs:annotation>
+                <xs:documentation>Имена прав и запросов должны быть уникальны</xs:documentation>
+            </xs:annotation>
+            <xs:selector xpath="rule|sql"/>
+            <xs:field xpath="@name"/>
+        </xs:unique>
+    </xs:element>
+    
+    <xs:element name="rule">
+        <xs:annotation>
+            <xs:documentation>Дополнительные правила которые работают как уточнения если просто разрешить метод не достаточно</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attributeGroup ref="attrNameDesc"/>
+        </xs:complexType>
+    </xs:element>
+    
+    
+    <xs:element name="method">
+        <xs:annotation>
+            <xs:documentation>Основное правила которое показывает, какой метод разрешен</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="1">
+                <xs:element ref="permission"  />
+            </xs:sequence>
+            <xs:attributeGroup ref="attrNameDesc"/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="sql">
+        <xs:annotation>
+            <xs:documentation>В path записывается путь к SQL запросу в файле query.xml</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:attribute name="path" use="required" type="xs:string"/>
+            <xs:attributeGroup ref="attrNameDesc"/>
+        </xs:complexType>
+    </xs:element>
+
+    
+    <xs:complexType name="methodInside">
+        <xs:sequence>
+            <xs:element ref="method" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:attributeGroup name="attrNameDesc">
+        <xs:annotation>
+            <xs:documentation>
+                name        - будет ячейкой массива
+                description - просто описание для отображения.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="name" use="required" type="xs:string"/>
+        <xs:attribute name="description" use="optional" type="xs:string"/>
+    </xs:attributeGroup>
+</xs:schema>

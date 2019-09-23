@@ -1,0 +1,14 @@
+<root name="categories" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <dynamic>
+        <element name="category">
+            <attribute name="title" cell="title" />
+            <dynamic cell="page">
+                <element name="page">
+                    <attribute name="title" cell="title" />
+                    <attribute name="url" cell="url" />
+                    <attribute name="var" cell="var" />
+                </element>
+            </dynamic>
+        </element>
+    </dynamic>
+</root>
